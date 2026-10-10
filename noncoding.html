@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Non-Coding Courses | Livewire</title>
+
+    <link rel="stylesheet" href="code.css">
+
+
+    <style>
+
+        /* =========================================================
+           NON-CODING PAGE HERO
+           DIFFERENT BACKGROUND FROM CODING PAGE
+        ========================================================= */
+
+        .coding-hero {
+
+            min-height: 55vh;
+
+            position: relative;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background-image:
+                url("https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=2000&q=85");
+
+            background-size: cover;
+
+            background-position: center;
+
+        }
+
+
+        /* =========================================================
+           NON-CODING HERO OVERLAY
+        ========================================================= */
+
+        .coding-hero-overlay {
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(24, 59, 82, 0.90),
+                    rgba(38, 91, 116, 0.72),
+                    rgba(220, 53, 69, 0.28)
+                );
+
+        }
+
+
+        /* =========================================================
+           COURSE SECTION
+        ========================================================= */
+
+        .coding-section {
+
+            padding: 70px 20px;
+
+        }
+
+
+        /* =========================================================
+           COURSE GRID
+           DESKTOP = 2 TOP + 1 BOTTOM
+        ========================================================= */
+
+        .coding-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 22px;
+
+            max-width: 850px;
+
+            margin: 40px auto 0;
+
+        }
+
+
+        /* =========================================================
+           COURSE CARD
+        ========================================================= */
+
+        .coding-card {
+
+            position: relative;
+
+            text-decoration: none;
+
+            padding: 28px 18px 22px;
+
+            min-height: 175px;
+
+            border-radius: 18px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            overflow: hidden;
+
+            transition: all 0.3s ease;
+
+            cursor: pointer;
+
+            background: #ffffff;
+
+            border: 1px solid #e0e7ed;
+
+            box-shadow:
+                0 12px 30px rgba(36, 79, 104, 0.08);
+
+            color: #244f68;
+
+        }
+
+
+        /* =========================================================
+           BLUE TOP BAR
+        ========================================================= */
+
+        .coding-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 5px;
+
+            border-radius: 10px 10px 0 0;
+
+            background: #4b4cff;
+
+            opacity: 1;
+
+        }
+
+
+        /* =========================================================
+           BACKGROUND CIRCLE
+        ========================================================= */
+
+        .coding-card::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 100px;
+            height: 100px;
+
+            border-radius: 50%;
+
+            background: #4b4cff;
+
+            opacity: 0.04;
+
+            top: -35px;
+            right: -35px;
+
+            transition: all 0.3s ease;
+
+        }
+
+
+        /* =========================================================
+           ICON
+        ========================================================= */
+
+        .coding-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            border-radius: 12px;
+        }
+
+        .coding-icon {
+
+            width: 58px;
+            height: 58px;
+
+            border-radius: 16px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            font-size: 27px;
+
+            margin-bottom: 15px;
+
+            background: #eef0ff;
+
+            border: 1px solid #dfe2ff;
+
+            transition: all 0.3s ease;
+
+            position: relative;
+
+            z-index: 2;
+
+        }
+
+
+        /* =========================================================
+           TITLE
+        ========================================================= */
+
+        .coding-card h3 {
+
+            margin: 0;
+
+            font-size: 19px;
+
+            font-weight: 700;
+
+            color: #244f68;
+
+            position: relative;
+
+            z-index: 2;
+
+        }
+
+
+        /* =========================================================
+           REMOVE LINK BLUE / VISITED COLOR
+        ========================================================= */
+
+        .coding-card:visited {
+
+            color: #244f68;
+
+            background: #ffffff;
+
+        }
+
+        .coding-card:active {
+
+            color: #244f68;
+
+            background: #ffffff;
+
+        }
+
+        .coding-card:focus {
+
+            color: #244f68;
+
+            background: #ffffff;
+
+            outline: none;
+
+        }
+
+        .coding-card:visited h3,
+        .coding-card:active h3,
+        .coding-card:focus h3 {
+
+            color: #244f68;
+
+        }
+
+
+        /* =========================================================
+           HOVER
+        ========================================================= */
+
+        .coding-card:hover {
+
+            transform: translateY(-7px);
+
+            box-shadow:
+                0 20px 40px rgba(36, 79, 104, 0.14);
+
+        }
+
+
+        .coding-card:hover .coding-icon {
+
+            transform: scale(1.08);
+
+        }
+
+
+        .coding-card:hover::after {
+
+            transform: scale(2);
+
+            opacity: 0.07;
+
+        }
+
+
+        /* =========================================================
+           MOBILE NON-CODING HERO
+           DIFFERENT BACKGROUND
+        ========================================================= */
+
+        @media (max-width: 600px) {
+
+            .coding-hero {
+
+                min-height: 65vh;
+
+                background-image:
+                    linear-gradient(
+                        135deg,
+                        rgba(11, 35, 52, 0.92),
+                        rgba(24, 79, 102, 0.76),
+                        rgba(220, 53, 69, 0.35)
+                    ),
+                    url("https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=90");
+
+                background-size: cover;
+
+                background-position: center;
+
+            }
+
+
+            .coding-hero-content {
+
+                padding: 165px 22px 55px;
+
+            }
+
+
+            .coding-hero h1 {
+
+                font-size: 42px;
+
+            }
+
+
+            .coding-hero-content p {
+
+                font-size: 15px;
+
+            }
+
+
+            .coding-section {
+
+                padding: 70px 20px;
+
+            }
+
+
+            .coding-grid {
+
+                grid-template-columns: 1fr;
+
+                gap: 22px;
+
+                max-width: 330px;
+
+            }
+
+
+            .coding-card {
+
+                min-height: 155px;
+
+            }
+
+
+            .coding-card h3 {
+
+                font-size: 19px;
+
+            }
+
+        }
+
+
+        /* =========================================================
+           VERY SMALL MOBILE
+        ========================================================= */
+
+        @media (max-width: 380px) {
+
+            .coding-hero h1 {
+
+                font-size: 36px;
+
+            }
+
+            .coding-hero-content {
+
+                padding-left: 18px;
+
+                padding-right: 18px;
+
+            }
+
+            .coding-card {
+
+                min-height: 150px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================================
+         NAVBAR
+    ========================================================= -->
+
+    <header class="navbar">
+
+        <div class="nav-container">
+
+
+            <!-- LOGO -->
+
+            <a href="index.html" class="logo">
+
+                <img src="logo.jpeg" alt="Livewire Logo">
+
+            </a>
+
+
+
+            <!-- DIGITAL BOARD -->
+
+            <div class="nav-digital-board">
+
+                <div class="nav-digital-text">
+
+                    LIVEWIRE VADAPALANI - SOFTWARE TRAINING CENTRE |
+                    ADMISSIONS OPEN |
+                    JOIN NOW
+
+                </div>
+
+            </div>
+
+
+
+            <!-- NAVIGATION -->
+
+            <nav id="mainNav">
+
+
+                <a href="index.html">
+
+                    Home
+
+                </a>
+
+
+
+                <a href="index.html#why-us">
+
+                    Why Us
+
+                </a>
+
+
+
+                <a href="index.html#about">
+
+                    About
+
+                </a>
+
+
+
+                <a href="index.html#contact">
+
+                    Contact
+
+                </a>
+
+
+
+                <a href="index.html#register" class="enquire-btn">
+
+                    Enquire Now
+
+                </a>
+
+
+            </nav>
+
+
+
+            <!-- MOBILE MENU -->
+
+            <div class="menu-icon" onclick="toggleMenu()">
+
+                ☰
+
+            </div>
+
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================================
+         NON-CODING HERO
+    ========================================================= -->
+
+    <section class="coding-hero">
+
+
+        <div class="coding-hero-overlay"></div>
+
+
+
+        <div class="coding-hero-content">
+
+
+            <span class="coding-label">
+
+                PROFESSIONAL TRAINING
+
+            </span>
+
+
+
+            <h1>
+
+                Non-Coding
+
+                <span>
+
+                    Courses
+
+                </span>
+
+            </h1>
+
+
+
+            <p>
+
+                Build your professional skills with
+                industry-focused non-coding training programs.
+
+            </p>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================================================
+         COURSE CATEGORY
+    ========================================================= -->
+
+    <section class="coding-section">
+
+
+        <div class="section-heading">
+
+
+            <span>
+
+                NON-CODING COURSES
+
+            </span>
+
+
+
+            <h2>
+
+                Choose Your
+
+                <b>
+
+                    Learning Path
+
+                </b>
+
+            </h2>
+
+
+
+            <p>
+
+                Select a program to explore the available courses.
+
+            </p>
+
+
+        </div>
+
+
+
+        <!-- =====================================================
+             COURSE CARDS
+        ===================================================== -->
+
+        <div class="coding-grid">
+
+
+            <!-- =================================================
+                 DATA ANALYTICS
+            ================================================= -->
+
+            <a href="data-analytics.html"
+               class="coding-card">
+
+
+                <div class="coding-icon">
+
+                    <img src="da-logo.jpg" alt="Data Analytics Logo">
+
+                </div>
+
+
+
+                <h3>
+
+                    Data Analytics
+
+                </h3>
+
+
+            </a>
+
+
+
+            <!-- =================================================
+                 BUSINESS INTELLIGENCE
+            ================================================= -->
+
+            <a href="business-intelligence.html"
+               class="coding-card">
+
+
+                <div class="coding-icon">
+
+                    <img src="BI-logo.avif" alt="Business Intelligence Logo">
+
+                </div>
+
+
+
+                <h3>
+
+                    Business Intelligence
+
+                </h3>
+
+
+            </a>
+
+
+
+            <!-- =================================================
+                 OFFICE AUTOMATION
+            ================================================= -->
+
+            <a href="office-automation.html"
+               class="coding-card">
+
+
+                <div class="coding-icon">
+
+                    <img src="oa-logo.jfif" alt="Office Automation Logo">
+
+                </div>
+
+
+
+                <h3>
+
+                    Office Automation
+
+                </h3>
+
+
+            </a>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================= -->
+
+    <footer>
+
+
+        <img src="logo.jpeg" alt="Livewire Logo">
+
+
+
+        <p>
+
+            Industry Ready Training for Your Career
+
+        </p>
+
+
+
+        <div class="footer-links">
+
+
+            <a href="index.html">
+
+                Home
+
+            </a>
+
+
+
+        
+
+
+
+            <a href="index.html#why-us">
+
+                Why Us
+
+            </a>
+
+
+
+            <a href="index.html#about">
+
+                About
+
+            </a>
+
+
+
+            <a href="index.html#contact">
+
+                Contact
+
+            </a>
+
+
+        </div>
+
+
+
+        <small>
+
+            © 2026 Livewire. All Rights Reserved.
+
+        </small>
+
+
+    </footer>
+
+
+
+    <!-- =========================================================
+         MOBILE MENU SCRIPT
+    ========================================================= -->
+
+    <script>
+
+        function toggleMenu() {
+
+            const nav =
+                document.getElementById("mainNav");
+
+            nav.classList.toggle("active");
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

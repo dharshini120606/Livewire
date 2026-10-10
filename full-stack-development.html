@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Full Stack Development | Livewire</title>
+
+    <link rel="stylesheet" href="code.css">
+
+    <style>
+        /* COURSE SECTION */
+        .coding-section {
+            padding: 70px 20px;
+            background: linear-gradient(
+                135deg,
+                #eef7fa,
+                #f8fcfd,
+                #eef7fa
+            );
+        }
+
+        /* MAIN PROGRAM BOX */
+        .software-program-box {
+            max-width: 900px;
+            margin: 40px auto 0;
+            background: #ffffff;
+            border-radius: 26px;
+            padding: 38px 43px 44px;
+            border-top: 8px solid #285a75;
+            box-shadow: 0 10px 30px rgba(36, 79, 104, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .software-program-box::after {
+            content: "";
+            position: absolute;
+            top: -8px;
+            right: 0;
+            width: 48%;
+            height: 8px;
+            background: #5ba6c5;
+            border-radius: 0 26px 0 0;
+        }
+
+        /* PROGRAM HEADING */
+        .software-program-heading {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .software-program-heading h2 {
+            margin: 0;
+            font-size: 31px;
+            font-weight: 700;
+            color: #244f68;
+        }
+
+        .software-program-heading h2 span {
+            color: #3589b1;
+        }
+
+        /* LANGUAGE / COURSE BOX */
+        .software-language-box {
+            width: 100%;
+            margin-bottom: 18px;
+            border: 1px solid #d0e2eb;
+            border-radius: 15px;
+            background: linear-gradient(90deg, #f8fcfd, #ffffff);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .software-language-box:last-child {
+            margin-bottom: 0;
+        }
+
+        /* LEFT BLUE BAR */
+        .software-language-box::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 7px;
+            height: 100%;
+            background: linear-gradient(to bottom, #285a75, #55a7c5);
+        }
+
+        .software-language-box:hover {
+            border-color: #9fc7d9;
+            box-shadow: 0 6px 18px rgba(36, 79, 104, 0.09);
+        }
+
+        /* COURSE TITLE */
+        .software-language-title {
+            min-height: 68px;
+            display: flex;
+            align-items: center;
+            padding: 10px 22px 10px 27px;
+        }
+
+        /* ICON */
+        .software-language-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            background: #edf7fa;
+            border: 1px solid #d0e5ed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #244f68;
+            font-size: 19px;
+            font-weight: 700;
+            margin-right: 16px;
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+
+        /* COURSE ICON IMAGES */
+        .software-language-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            border-radius: 9px;
+        }
+
+        /* COURSE NAME */
+        .software-language-name {
+            font-size: 20px;
+            font-weight: 700;
+            color: #174d70;
+        }
+
+        /* SUB COURSE AREA */
+        .software-sub-area {
+            padding: 0 16px 15px 27px;
+        }
+
+        /* PDF ROW */
+        .software-sub-row {
+            min-height: 54px;
+            width: 100%;
+            margin-top: 8px;
+            border: 1px solid #d5e6ed;
+            border-radius: 11px;
+            background: #fbfdfe;
+            display: flex;
+            align-items: center;
+            padding: 8px 17px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* SMALL LEFT BAR */
+        .software-sub-row::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 5px;
+            height: 100%;
+            background: #5ca7c5;
+        }
+
+        .software-sub-row:hover {
+            background: #f4fafc;
+            border-color: #afd0df;
+            transform: translateX(3px);
+            box-shadow: 0 4px 12px rgba(36, 79, 104, 0.07);
+        }
+
+        /* SUB ICON */
+        .software-sub-icon {
+            width: 34px;
+            height: 34px;
+            border-radius: 8px;
+            background: #edf7fa;
+            border: 1px solid #d2e5ec;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            margin-right: 14px;
+            flex-shrink: 0;
+        }
+
+        /* SUB NAME */
+        .software-sub-name {
+            flex: 1;
+            font-size: 17px;
+            font-weight: 600;
+            color: #244f68;
+        }
+
+        /* ARROW */
+        .software-sub-arrow {
+            font-size: 22px;
+            color: #287db0;
+            font-weight: 400;
+        }
+
+        /* BACK TO CODING */
+        .software-back-button {
+            display: block;
+            width: fit-content;
+            margin: 0 auto 30px;
+            padding: 12px 30px;
+            background: #285a75;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 28px;
+            font-size: 16px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .software-back-button:hover {
+            background: #1d465d;
+            transform: translateY(-2px);
+        }
+
+        /* MOBILE */
+        @media (max-width: 700px) {
+            .coding-section {
+                padding: 50px 14px;
+            }
+
+            .software-program-box {
+                width: 94%;
+                padding: 30px 17px 32px;
+                border-radius: 20px;
+            }
+
+            .software-program-heading h2 {
+                font-size: 25px;
+            }
+
+            .software-language-title {
+                min-height: 63px;
+                padding: 9px 15px 9px 22px;
+            }
+
+            .software-language-icon {
+                width: 39px;
+                height: 39px;
+                font-size: 16px;
+                margin-right: 12px;
+            }
+
+            .software-language-name {
+                font-size: 18px;
+            }
+
+            .software-sub-area {
+                padding: 0 12px 13px 21px;
+            }
+
+            .software-sub-row {
+                min-height: 52px;
+                padding: 8px 13px;
+            }
+
+            .software-sub-icon {
+                width: 31px;
+                height: 31px;
+                font-size: 14px;
+                margin-right: 11px;
+            }
+
+            .software-sub-name {
+                font-size: 16px;
+            }
+
+            .software-sub-arrow {
+                font-size: 20px;
+            }
+
+            .software-back-button {
+                font-size: 15px;
+                padding: 11px 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <div class="nav-container">
+
+        <!-- LOGO -->
+        <a href="index.html" class="logo">
+            <img src="logo.jpeg" alt="Livewire Logo">
+        </a>
+
+        <!-- DIGITAL BOARD -->
+        <div class="nav-digital-board">
+            <div class="nav-digital-text">
+                LIVEWIRE VADAPALANI -
+                SOFTWARE TRAINING CENTRE |
+                ADMISSIONS OPEN |
+                JOIN NOW
+            </div>
+        </div>
+
+        <!-- NAVIGATION -->
+        <nav id="mainNav">
+            <a href="index.html">Home</a>
+            <a href="index.html#why-us">Why Us</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#contact">Contact</a>
+
+            <a href="index.html#register" class="enquire-btn">
+                Enquire Now
+            </a>
+        </nav>
+
+        <!-- MOBILE MENU -->
+        <div class="menu-icon" onclick="toggleMenu()">
+            ☰
+        </div>
+
+    </div>
+</header>
+
+<!-- FULL STACK HERO -->
+<section class="coding-hero">
+    <div class="coding-hero-overlay"></div>
+
+    <div class="coding-hero-content">
+        <span class="coding-label">
+            PROFESSIONAL TRAINING
+        </span>
+
+        <h1>
+            Full Stack
+            <span>Development</span>
+        </h1>
+
+        <p>
+            Build complete web applications with
+            industry-focused full stack development training.
+        </p>
+    </div>
+</section>
+
+<!-- FULL STACK COURSES -->
+<section class="coding-section">
+
+    <div class="section-heading">
+        <span>FULL STACK DEVELOPMENT</span>
+
+        <h2>
+            Choose Your
+            <b>Course</b>
+        </h2>
+
+        <p>
+            Select a course to continue.
+        </p>
+    </div>
+
+    <!-- MAIN COURSE BOX -->
+    <div class="software-program-box">
+
+        <div class="software-program-heading">
+            <h2>
+                Full Stack
+                <span>Development</span>
+            </h2>
+        </div>
+
+        <!-- FULL STACK PYTHON -->
+        <div class="software-language-box">
+
+            <div class="software-language-title">
+
+                <div class="software-language-icon">
+                    <img src="python-logo.png" alt="Python Logo">
+                </div>
+
+                <div class="software-language-name">
+                    Full Stack Python
+                </div>
+
+            </div>
+
+            <div class="software-sub-area">
+
+                <!-- WEB DESIGNING -->
+                <a href="course-web.pdf"
+                   class="software-sub-row"
+                   target="_blank">
+
+                    <div class="software-sub-icon">▣</div>
+
+                    <div class="software-sub-name">
+                        Web Designing
+                    </div>
+
+                    <div class="software-sub-arrow">→</div>
+                </a>
+
+                <!-- PYTHON -->
+                <a href="courseon-py.pdf"
+                   class="software-sub-row"
+                   target="_blank">
+
+                    <div class="software-sub-icon">▣</div>
+
+                    <div class="software-sub-name">
+                        Python
+                    </div>
+
+                    <div class="software-sub-arrow">→</div>
+                </a>
+
+                <!-- DJANGO -->
+                <a href="courseon-django.pdf"
+                   class="software-sub-row"
+                   target="_blank">
+
+                    <div class="software-sub-icon">▣</div>
+
+                    <div class="software-sub-name">
+                        Django
+                    </div>
+
+                    <div class="software-sub-arrow">→</div>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- FULL STACK JAVA -->
+        <div class="software-language-box">
+
+            <div class="software-language-title">
+
+                <div class="software-language-icon">
+                    <img src="java-logo.webp" alt="Java Logo">
+                </div>
+
+                <div class="software-language-name">
+                    Full Stack Java
+                </div>
+
+            </div>
+
+            <div class="software-sub-area">
+
+                <!-- WEB DESIGNING -->
+                <a href="course-web.pdf"
+                   class="software-sub-row"
+                   target="_blank">
+
+                    <div class="software-sub-icon">▣</div>
+
+                    <div class="software-sub-name">
+                        Web Designing
+                    </div>
+
+                    <div class="software-sub-arrow">→</div>
+                </a>
+
+                <!-- JAVA -->
+                <a href="courseon-java.pdf"
+                   class="software-sub-row"
+                   target="_blank">
+
+                    <div class="software-sub-icon">▣</div>
+
+                    <div class="software-sub-name">
+                        Java
+                    </div>
+
+                    <div class="software-sub-arrow">→</div>
+                </a>
+
+                <!-- ADVANCED JAVA -->
+                <a href="courseon-adjava.pdf"
+                   class="software-sub-row"
+                   target="_blank">
+
+                    <div class="software-sub-icon">▣</div>
+
+                    <div class="software-sub-name">
+                        Advanced Java
+                    </div>
+
+                    <div class="software-sub-arrow">→</div>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- MEAN -->
+        <div class="software-language-box">
+
+            <div class="software-language-title">
+
+                <div class="software-language-icon">
+                    <img src="mean-logo.webp" alt="MEAN Stack Logo">
+                </div>
+
+                <div class="software-language-name">
+                    Full Stack - MEAN
+                </div>
+
+            </div>
+
+            <div class="software-sub-area">
+
+                <a href="mean.pdf"
+                   class="software-sub-row"
+                   target="_blank">
+
+                    <div class="software-sub-icon">▣</div>
+
+                    <div class="software-sub-name">
+                        MEAN
+                    </div>
+
+                    <div class="software-sub-arrow">→</div>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- MERN -->
+        <div class="software-language-box">
+
+            <div class="software-language-title">
+
+                <div class="software-language-icon">
+                    <img src="mern-logo.webp" alt="MERN Stack Logo">
+                </div>
+
+                <div class="software-language-name">
+                    Full Stack - MERN
+                </div>
+
+            </div>
+
+            <div class="software-sub-area">
+
+                <a href="mern.pdf"
+                   class="software-sub-row"
+                   target="_blank">
+
+                    <div class="software-sub-icon">▣</div>
+
+                    <div class="software-sub-name">
+                        MERN
+                    </div>
+
+                    <div class="software-sub-arrow">→</div>
+                </a>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- BACK TO CODING -->
+<a href="coding.html" class="software-back-button">
+    ← Back to Coding
+</a>
+
+<!-- FOOTER -->
+<footer>
+
+    <img src="logo.jpeg" alt="Livewire Logo">
+
+    <p>
+        Industry Ready Training for Your Career
+    </p>
+
+    <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#why-us">Why Us</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+    </div>
+
+    <small>
+        © 2026 Livewire. All Rights Reserved.
+    </small>
+
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+    function toggleMenu() {
+        const nav = document.getElementById("mainNav");
+        nav.classList.toggle("active");
+    }
+
+    /* Close mobile menu after clicking */
+    document
+        .querySelectorAll("#mainNav a")
+        .forEach(function(link) {
+            link.addEventListener("click", function() {
+                document
+                    .getElementById("mainNav")
+                    .classList
+                    .remove("active");
+            });
+        });
+</script>
+
+</body>
+</html>

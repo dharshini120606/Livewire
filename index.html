@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIVEWIRE | Vadapalani</title>
+    <link rel="stylesheet" href="code.css">
+
+    <style>
+        /* COMPETITION SECTION */
+        .index-competition-section {
+            width: 100%;
+            padding: 55px 20px 70px;
+            background: linear-gradient(180deg, #eef7fa, #f7fbfc);
+        }
+
+        .index-competition-container {
+            max-width: 1280px;
+            margin: auto;
+        }
+
+        .index-competition-heading {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .index-competition-heading span {
+            display: block;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: #4e9cc0;
+            margin-bottom: 8px;
+        }
+
+        .index-competition-heading h2 {
+            font-size: 38px;
+            color: #244f68;
+            margin: 0 0 8px;
+            font-weight: 800;
+        }
+
+        .index-competition-heading h2 b {
+            color: #dc3545;
+        }
+
+        .index-competition-heading p {
+            color: #66859a;
+            font-size: 16px;
+            margin: 0;
+        }
+
+        .index-scoreboard {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid #dce8ee;
+            box-shadow: 0 15px 40px rgba(36, 79, 104, 0.10);
+        }
+
+        .index-scoreboard-top {
+            padding: 35px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #fff, #f5fbfd);
+            border-top: 7px solid #2d789b;
+        }
+
+        .index-scoreboard-title {
+            font-size: 34px;
+            font-weight: 800;
+            color: #244f68;
+        }
+
+        .index-course-filter {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 20px auto 8px;
+        }
+
+        .index-course-filter label {
+            color: #244f68;
+            font-weight: 700;
+            font-size: 15px;
+        }
+
+        .index-course-filter select {
+            min-width: 220px;
+            padding: 12px 16px;
+            border: 1px solid #b9d5e1;
+            border-radius: 10px;
+            background: #fff;
+            color: #244f68;
+            font: inherit;
+            outline: none;
+        }
+
+        .index-course-filter select:focus {
+            border-color: #2d789b;
+            box-shadow: 0 0 0 3px rgba(45, 120, 155, 0.12);
+        }
+
+        .index-filter-hint {
+            margin: 10px 0 0;
+            color: #66859a;
+            font-size: 13px;
+        }
+
+        .index-table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        .index-scoreboard table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 700px;
+        }
+
+        .index-scoreboard thead {
+            background: linear-gradient(90deg, #244f68, #3784a5);
+            color: white;
+        }
+
+        .index-scoreboard th {
+            padding: 19px 15px;
+            font-size: 16px;
+            font-weight: 800;
+            text-align: center;
+        }
+
+        .index-scoreboard td {
+            padding: 19px 15px;
+            text-align: center;
+            font-size: 16px;
+            color: #244f68;
+            border-bottom: 1px solid #dce8ee;
+            background: white;
+        }
+
+        .index-scoreboard tbody tr:nth-child(even) td {
+            background: #f2f8fa;
+        }
+
+        .index-scoreboard tbody tr:hover td {
+            background: #e8f4f8;
+        }
+
+        .index-student-name {
+            font-weight: 700;
+        }
+
+        .index-course-name {
+            font-weight: 700;
+            color: #327fa2;
+        }
+
+        .index-joined-date {
+            font-weight: 700;
+            color: #327fa2;
+            white-space: nowrap;
+        }
+
+        .index-mark {
+            font-size: 20px;
+            font-weight: 800;
+            color: #2d789b;
+        }
+
+        .index-competition-loading {
+            text-align: center !important;
+            padding: 40px !important;
+            font-size: 17px !important;
+            color: #66859a !important;
+        }
+
+        .index-competition-error {
+            text-align: center !important;
+            padding: 40px !important;
+            color: #dc3545 !important;
+            font-weight: 700 !important;
+        }
+
+        .index-stats-bar {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .index-stat-card {
+            background: white;
+            border: 1px solid #dce8ee;
+            border-radius: 18px;
+            padding: 25px 20px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(36, 79, 104, 0.08);
+            transition: 0.3s ease;
+        }
+
+        .index-stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 30px rgba(36, 79, 104, 0.12);
+        }
+
+        .index-stat-number {
+            font-size: 30px;
+            font-weight: 800;
+            color: #244f68;
+            margin-bottom: 5px;
+        }
+
+        .index-stat-label {
+            font-size: 14px;
+            font-weight: 700;
+            color: #6b899b;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        @media (max-width: 900px) {
+            .index-stats-bar {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .index-competition-heading h2 {
+                font-size: 30px;
+            }
+
+            .index-scoreboard-title {
+                font-size: 27px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .index-competition-section {
+                padding: 40px 12px 60px;
+            }
+
+            .index-scoreboard {
+                border-radius: 18px;
+            }
+
+            .index-scoreboard-top {
+                padding: 25px 15px;
+            }
+
+            .index-scoreboard-title {
+                font-size: 23px;
+            }
+
+            .index-scoreboard th,
+            .index-scoreboard td {
+                padding: 15px 10px;
+                font-size: 14px;
+            }
+
+            .index-mark {
+                font-size: 17px;
+            }
+
+            .index-stats-bar {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+
+            .index-stat-card {
+                padding: 20px 10px;
+            }
+
+            .index-stat-number {
+                font-size: 25px;
+            }
+
+            .index-stat-label {
+                font-size: 11px;
+            }
+
+            .index-course-filter {
+                flex-direction: column;
+            }
+
+            .index-course-filter select {
+                width: 100%;
+                min-width: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <div class="nav-container">
+
+        <div class="logo">
+            <img src="livewirelogo.jfif" alt="LIVEWIRE">
+        </div>
+
+        <div class="nav-digital-board">
+            <div class="nav-digital-text">
+                LIVEWIRE VADAPALANI -
+                SOFTWARE TRAINING CENTRE |
+                ADMISSIONS OPEN |
+                JOIN NOW
+            </div>
+        </div>
+
+        <nav id="navMenu">
+            <a href="index.html">Home</a>
+            <a href="#why-us">Why Us</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <a href="#register" class="enquire-btn" id="enrollButton">
+                Enroll Now
+            </a>
+        </nav>
+
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+        <div class="location-title">LIVEWIRE - VADAPALANI</div>
+
+        <h1>
+            Build Your
+            <span>Future With Skills</span>
+        </h1>
+
+        <p>
+            Learn industry-focused courses,
+            build practical skills and prepare
+            yourself for your next career move.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#register" class="primary-btn">Enroll Now</a>
+            <a href="#courses" class="outline-btn">Explore Courses</a>
+        </div>
+    </div>
+</section>
+
+<!-- COURSES -->
+<section class="courses-section" id="courses">
+    <div class="section-heading">
+        <span>EXPLORE</span>
+        <h2>Choose Your <b>Path</b></h2>
+        <p>Build skills that match your career goals.</p>
+    </div>
+
+    <div class="course-category-grid">
+
+        <a href="coding.html" class="category-card coding">
+            <div class="category-icon">&lt;/&gt;</div>
+            <h3>Coding</h3>
+            <p>
+                Learn programming, software development and
+                technology-focused skills.
+            </p>
+            <div class="learn-more">Explore Coding →</div>
+        </a>
+
+        <a href="noncoding.html" class="category-card noncoding">
+            <div class="category-icon">✦</div>
+            <h3>Non-Coding</h3>
+            <p>
+                Explore professional, business and
+                industry-focused courses.
+            </p>
+            <div class="learn-more">Explore Non-Coding →</div>
+        </a>
+
+    </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-section" id="why-us">
+    <div class="section-heading">
+        <span>WHY LIVEWIRE</span>
+        <h2>Learn With <b>Purpose</b></h2>
+    </div>
+
+    <div class="why-grid">
+
+        <div class="why-card">
+            <div class="why-icon">🎓</div>
+            <h3>Practical Learning</h3>
+            <p>Learn through practical and industry-focused training.</p>
+        </div>
+
+        <div class="why-card">
+            <div class="why-icon">💻</div>
+            <h3>Industry Skills</h3>
+            <p>Build skills that are useful for your professional journey.</p>
+        </div>
+
+        <div class="why-card">
+            <div class="why-icon">👨‍🏫</div>
+            <h3>Expert Guidance</h3>
+            <p>Get proper guidance while learning your chosen course.</p>
+        </div>
+
+        <div class="why-card">
+            <div class="why-icon">🚀</div>
+            <h3>Career Growth</h3>
+            <p>Improve your knowledge and prepare for better opportunities.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+    <div class="about-container">
+
+        <div class="about-text">
+            <span class="section-label">ABOUT LIVEWIRE</span>
+
+            <h2>
+                Build Your
+                <span>Digital Future</span>
+            </h2>
+
+            <p>
+                Livewire provides industry-focused training programs
+                designed to help learners develop practical skills.
+            </p>
+
+            <p>
+                Our courses are structured to support students,
+                working professionals and job seekers.
+            </p>
+        </div>
+
+        <div class="about-visual">
+            <div class="about-box">
+                <div class="big-number">LIVEWIRE</div>
+                <p>Software Training Centre</p>
+                <span>VADAPALANI</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- COMPETITION RESULTS -->
+<section class="index-competition-section" id="competition-results">
+    <div class="index-competition-container">
+
+        <div class="index-competition-heading">
+            <span>PERFORMANCE BOARD</span>
+            <h2>Competition <b>Results</b></h2>
+            <p>Latest student competition performance</p>
+        </div>
+
+        <div class="index-scoreboard">
+
+            <div class="index-scoreboard-top">
+                <div class="index-scoreboard-title">
+                    Competition Results
+                </div>
+
+                <div class="index-course-filter">
+                    <label for="indexCourseFilter">Select Course</label>
+
+                    <select id="indexCourseFilter">
+                        <option value="All Courses">All Courses</option>
+                    </select>
+                </div>
+
+                <p id="indexCompetitionFilterHint" class="index-filter-hint">
+                    Loading courses...
+                </p>
+            </div>
+
+            <div class="index-table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>SNO</th>
+                            <th>Name</th>
+                            <th>Course</th>
+                            <th>Joined Date</th>
+                            <th>Mark</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="indexCompetitionBody">
+                        <tr>
+                            <td colspan="5" class="index-competition-loading">
+                                Loading competition results...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+        <!-- STATISTICS -->
+        <div class="index-stats-bar">
+
+            <div class="index-stat-card">
+                <div class="index-stat-number" id="indexTotalStudents">0</div>
+                <div class="index-stat-label">Students Shown</div>
+            </div>
+
+            <div class="index-stat-card">
+                <div class="index-stat-number" id="indexLeadingMark">0</div>
+                <div class="index-stat-label">Leading Mark</div>
+            </div>
+
+            <div class="index-stat-card">
+                <div class="index-stat-number" id="indexAverageMark">0%</div>
+                <div class="index-stat-label">Average Mark</div>
+            </div>
+
+            <div class="index-stat-card">
+                <div class="index-stat-number" id="indexTopScorers">0</div>
+                <div class="index-stat-label">90+ Marks</div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- REGISTRATION / ENROLLMENT -->
+<section class="enquiry-section" id="register">
+    <div class="enquiry-container">
+
+        <div class="enquiry-content">
+            <span>START YOUR JOURNEY</span>
+            <h2>Enroll <strong>Today</strong></h2>
+
+            <p>
+                Fill in your details to enroll in your preferred course.
+            </p>
+
+            <p>
+                Submit your details and our team will get in touch with you.
+            </p>
+        </div>
+
+        <form id="enquiryForm" class="registration-form">
+
+            <input
+                type="text"
+                id="studentName"
+                placeholder="Enter full name"
+                required
+            >
+
+            <input
+                type="tel"
+                id="studentPhone"
+                placeholder="Enter mobile number"
+                maxlength="10"
+                pattern="[0-9]{10}"
+                inputmode="numeric"
+                required
+            >
+
+            <input
+                type="email"
+                id="studentEmail"
+                placeholder="Enter email ID"
+                required
+            >
+
+            <input type="date" id="studentDob" required>
+
+            <textarea
+                id="studentAddress"
+                rows="3"
+                placeholder="Enter address"
+                required
+            ></textarea>
+
+            <input
+                type="text"
+                id="studentArea"
+                placeholder="Enter area"
+                required
+            >
+
+            <input
+                type="text"
+                id="studentDistrict"
+                placeholder="Enter district"
+                required
+            >
+
+            <input
+                type="text"
+                id="studentPincode"
+                placeholder="Enter pincode"
+                maxlength="6"
+                pattern="[0-9]{6}"
+                inputmode="numeric"
+                required
+            >
+
+            <select id="careerStatus" required>
+                <option value="">Select Career Status</option>
+                <option value="Student">Student</option>
+                <option value="Working Professional">Working Professional</option>
+                <option value="Job Seeker">Job Seeker</option>
+                <option value="Others">Others</option>
+            </select>
+
+            <div
+                id="studentDetails"
+                class="career-extra-fields"
+                style="display:none;"
+            >
+                <input
+                    type="text"
+                    id="collegeName"
+                    placeholder="Enter college name"
+                >
+
+                <input
+                    type="text"
+                    id="department"
+                    placeholder="Enter department"
+                >
+            </div>
+
+            <div
+                id="workingDetails"
+                class="career-extra-fields"
+                style="display:none;"
+            >
+                <input
+                    type="text"
+                    id="companyName"
+                    placeholder="Enter company / organisation name"
+                >
+
+                <input
+                    type="text"
+                    id="workLocation"
+                    placeholder="Enter work location"
+                >
+            </div>
+
+            <select id="studentCourse" required>
+                <option value="">Select Course</option>
+                <option value="Coding">Coding</option>
+                <option value="Non-Coding">Non-Coding</option>
+            </select>
+
+            <textarea
+                id="studentMessage"
+                rows="3"
+                placeholder="Message (optional)"
+            ></textarea>
+
+            <div id="registrationSuccess" style="display:none;"></div>
+
+            <button type="submit" id="submitRegistration">
+                Enroll Now
+            </button>
+
+        </form>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+
+    <div class="section-heading">
+        <span>GET IN TOUCH</span>
+        <h2>Contact <b>Us</b></h2>
+    </div>
+
+    <div class="contact-grid">
+
+        <div class="contact-card">
+            <div class="contact-icon">📍</div>
+            <h3>Location</h3>
+
+            <p>
+                <a
+                
+                >
+                    Shopping Complex, Bus Depot,<br>
+                    D9, 3rd Floor, Doshi Gardens,<br>
+                    Arcot Road, Vadapalani
+                </a>
+            </p>
+        </div>
+
+        <div class="contact-card">
+            <div class="contact-icon">📞</div>
+            <h3>Contact</h3>
+            <p>
+                <a href="tel:7823959959">7823959959</a>
+            </p>
+        </div>
+
+        <div class="contact-card">
+            <div class="contact-icon">💬</div>
+            <h3>WhatsApp</h3>
+
+            <p>
+                <a
+                    href="https://wa.me/917823959959"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    7823959959
+                </a>
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <img src="logo.jpeg" alt="LIVEWIRE">
+
+    <p>LIVEWIRE - Vadapalani</p>
+
+    <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="#why-us">Why Us</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <small>© 2026 LIVEWIRE. All Rights Reserved.</small>
+</footer>
+
+<!-- EXISTING JAVASCRIPT -->
+<script src="script.js"></script>
+
+<!-- COMPETITION RESULTS JAVASCRIPT -->
+<script>
+const INDEX_COMPETITION_API_URL =
+"https://script.google.com/macros/s/AKfycbxrpwsiMtbfSnq6bbxMRudvUP_C0NU_Z5XFArTILCUDlhB9W1Vl2-oIsednyW6LHWzv/exec";
+
+let indexCompetitionStudents = [];
+
+/* DATE FORMAT
+   Handles ISO dates and DD-MM-YYYY / DD/MM/YYYY dates.
+   ISO date strings are formatted directly to avoid timezone shifts.
+*/
+function formatCompetitionDate(value) {
+    if (value === undefined || value === null || value === "") {
+        return "";
+    }
+
+    // If the API sends a Date object, handle it directly.
+    if (value instanceof Date && !Number.isNaN(value.getTime())) {
+        return [
+            String(value.getDate()).padStart(2, "0"),
+            String(value.getMonth() + 1).padStart(2, "0"),
+            value.getFullYear()
+        ].join("-");
+    }
+
+    const text = String(value).trim();
+
+    // ISO format: 2026-10-01 or 2026-10-01T00:00:00.000Z
+    const iso = text.match(/^(\d{4})-(\d{1,2})-(\d{1,2})(?:$|T|\s)/);
+
+    if (iso) {
+        return `${String(iso[3]).padStart(2, "0")}-${String(iso[2]).padStart(2, "0")}-${iso[1]}`;
+    }
+
+    // DD-MM-YYYY or DD/MM/YYYY
+    const dmy = text.match(/^(\d{1,2})[-\/](\d{1,2})[-\/](\d{4})$/);
+
+    if (dmy) {
+        return `${String(dmy[1]).padStart(2, "0")}-${String(dmy[2]).padStart(2, "0")}-${dmy[3]}`;
+    }
+
+    // US format MM/DD/YYYY, if supplied by the API.
+    const mdy = text.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+
+    if (mdy) {
+        return `${String(mdy[2]).padStart(2, "0")}-${String(mdy[1]).padStart(2, "0")}-${mdy[3]}`;
+    }
+
+    // Last fallback for other date strings.
+    const date = new Date(text);
+
+    if (!Number.isNaN(date.getTime())) {
+        return [
+            String(date.getDate()).padStart(2, "0"),
+            String(date.getMonth() + 1).padStart(2, "0"),
+            date.getFullYear()
+        ].join("-");
+    }
+
+    return text;
+}
+
+/* PREVENT HTML INJECTION */
+function indexEscapeHTML(value) {
+    return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
+/* CONVERT MARK TO NUMBER */
+function indexNumericMark(value) {
+    const mark = parseFloat(
+        String(value ?? "").replace(/[^0-9.-]/g, "")
+    );
+
+    return Number.isFinite(mark) ? mark : null;
+}
+
+/* NORMALISE COURSE NAME FOR FILTERING */
+function indexNormaliseCourse(value) {
+    return String(value ?? "")
+        .trim()
+        .replace(/\s+/g, " ")
+        .toLowerCase();
+}
+
+/* COURSE DROPDOWN
+   Build the list from the actual courses returned by the Google Sheet API.
+*/
+function populateIndexCourseFilter(data) {
+    const select = document.getElementById("indexCourseFilter");
+
+    if (!select) return;
+
+    const previousValue = select.value || "All Courses";
+
+    const uniqueCourses = new Map();
+
+    data.forEach(student => {
+        const course = String(student.course ?? "").trim();
+
+        if (!course) return;
+
+        const key = indexNormaliseCourse(course);
+
+        if (!uniqueCourses.has(key)) {
+            uniqueCourses.set(key, course);
+        }
+    });
+
+    const courses = [...uniqueCourses.values()].sort((a, b) =>
+        a.localeCompare(b, undefined, { sensitivity: "base" })
+    );
+
+    select.innerHTML =
+        '<option value="All Courses">All Courses</option>' +
+        courses.map(course =>
+            `<option value="${indexEscapeHTML(course)}">${indexEscapeHTML(course)}</option>`
+        ).join("");
+
+    const matchingOption = [...select.options].find(option =>
+        indexNormaliseCourse(option.value) ===
+        indexNormaliseCourse(previousValue)
+    );
+
+    select.value = matchingOption
+        ? matchingOption.value
+        : "All Courses";
+}
+
+/* DISPLAY COMPETITION RESULTS
+   All Courses: overall Top 10.
+   Specific course: Top 10 from that course only.
+*/
+function renderIndexCompetition() {
+    const select = document.getElementById("indexCourseFilter");
+    const tableBody = document.getElementById("indexCompetitionBody");
+
+    if (!select || !tableBody) return;
+
+    const selectedCourse = select.value || "All Courses";
+
+    const matchingStudents = indexCompetitionStudents
+        .filter(student => {
+            if (selectedCourse === "All Courses") {
+                return true;
+            }
+
+            return indexNormaliseCourse(student.course) ===
+                indexNormaliseCourse(selectedCourse);
+        })
+        .slice()
+        .sort((a, b) => {
+            const markA = indexNumericMark(a.mark);
+            const markB = indexNumericMark(b.mark);
+
+            return (markB ?? -Infinity) - (markA ?? -Infinity);
+        });
+
+    // Show only 10 students in the table.
+    const students = matchingStudents.slice(0, 10);
+
+    const hint = document.getElementById(
+        "indexCompetitionFilterHint"
+    );
+
+    if (hint) {
+        const courseLabel = selectedCourse === "All Courses"
+            ? "All Courses"
+            : selectedCourse;
+
+        hint.textContent =
+            `Showing Top ${students.length} of ${matchingStudents.length} student(s) · ${courseLabel} · Highest mark first`;
+    }
+
+    if (!students.length) {
+        tableBody.innerHTML = `
+            <tr>
+                <td colspan="5" class="index-competition-loading">
+                    No students found for this course.
+                </td>
+            </tr>
+        `;
+    } else {
+        tableBody.innerHTML = students.map((student, index) => `
+            <tr>
+                <td>${index + 1}</td>
+
+                <td class="index-student-name">
+                    ${indexEscapeHTML(student.name ?? "")}
+                </td>
+
+                <td class="index-course-name">
+                    ${indexEscapeHTML(student.course ?? "")}
+                </td>
+
+                <td class="index-joined-date">
+                    ${indexEscapeHTML(formatCompetitionDate(student.joinedDate))}
+                </td>
+
+                <td class="index-mark">
+                    ${indexEscapeHTML(student.mark ?? "")}
+                </td>
+            </tr>
+        `).join("");
+    }
+
+    updateIndexCompetitionStatistics(students);
+}
+
+/* UPDATE STATISTICS FOR THE TOP 10 SHOWN IN THE TABLE */
+function updateIndexCompetitionStatistics(data) {
+    const marks = data
+        .map(student => indexNumericMark(student.mark))
+        .filter(mark => mark !== null);
+
+    const totalStudents = data.length;
+
+    const leadingMark = marks.length
+        ? Math.max(...marks)
+        : 0;
+
+    const average = marks.length
+        ? marks.reduce((sum, mark) => sum + mark, 0) / marks.length
+        : 0;
+
+    const topScorers = marks.filter(mark => mark >= 90).length;
+
+    document.getElementById("indexTotalStudents").textContent =
+        totalStudents;
+
+    document.getElementById("indexLeadingMark").textContent =
+        leadingMark;
+
+    document.getElementById("indexAverageMark").textContent =
+        average.toFixed(1) + "%";
+
+    document.getElementById("indexTopScorers").textContent =
+        topScorers;
+}
+
+/* LOAD DATA FROM GOOGLE SHEETS */
+async function loadIndexCompetitionData() {
+    const tableBody = document.getElementById("indexCompetitionBody");
+
+    if (!tableBody) return;
+
+    try {
+        const response = await fetch(
+            INDEX_COMPETITION_API_URL + "?t=" + Date.now(),
+            {
+                method: "GET",
+                cache: "no-store",
+                redirect: "follow"
+            }
+        );
+
+        if (!response.ok) {
+            throw new Error("Unable to connect to Google Sheet.");
+        }
+
+        const data = await response.json();
+
+        if (!Array.isArray(data)) {
+            throw new Error("Unexpected Google Sheet response.");
+        }
+
+        indexCompetitionStudents = data;
+
+        populateIndexCourseFilter(data);
+        renderIndexCompetition();
+
+    } catch (error) {
+        console.error("Competition loading error:", error);
+
+        tableBody.innerHTML = `
+            <tr>
+                <td colspan="5" class="index-competition-error">
+                    Unable to load competition results. Please try again.
+                </td>
+            </tr>
+        `;
+
+        const hint = document.getElementById(
+            "indexCompetitionFilterHint"
+        );
+
+        if (hint) {
+            hint.textContent = "Could not load courses";
+        }
+
+        updateIndexCompetitionStatistics([]);
+    }
+}
+
+/* MOBILE MENU */
+function toggleMenu() {
+    const navMenu = document.getElementById("navMenu");
+
+    if (navMenu) {
+        navMenu.classList.toggle("active");
+    }
+}
+
+/* PAGE LOAD */
+document.addEventListener("DOMContentLoaded", function () {
+    const courseFilter = document.getElementById("indexCourseFilter");
+
+    if (courseFilter) {
+        courseFilter.addEventListener(
+            "change",
+            renderIndexCompetition
+        );
+    }
+
+    loadIndexCompetitionData();
+});
+
+/* AUTO REFRESH EVERY 30 SECONDS */
+setInterval(function () {
+    if (document.visibilityState === "visible") {
+        loadIndexCompetitionData();
+    }
+}, 30000);
+
+/* REFRESH WHEN USER RETURNS TO THE PAGE */
+document.addEventListener("visibilitychange", function () {
+    if (document.visibilityState === "visible") {
+        loadIndexCompetitionData();
+    }
+});
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,1868 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Weekly Competition | LIVEWIRE Vadapalani</title>
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #eef7fa;
+            color: #244f68;
+            min-height: 100vh;
+        }
+
+
+        /* =========================================================
+           NAVBAR
+        ========================================================= */
+
+        .navbar {
+            width: 100%;
+
+            background: linear-gradient(
+                90deg,
+                #fff1f3,
+                #eef7fa,
+                #fff1f3
+            );
+
+            border-bottom: 1px solid #dce8ee;
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+        }
+
+
+        .nav-container {
+            max-width: 1250px;
+
+            min-height: 82px;
+
+            margin: auto;
+
+            padding: 8px 25px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 20px;
+        }
+
+
+        /* =========================================================
+           LOGO
+        ========================================================= */
+
+        .logo {
+            display: flex;
+
+            align-items: center;
+
+            flex-shrink: 0;
+        }
+
+
+        .logo img {
+            width: 145px;
+
+            height: auto;
+
+            display: block;
+        }
+
+
+        /* =========================================================
+           DIGITAL BOARD
+        ========================================================= */
+
+        .nav-digital-board {
+            width: 430px;
+
+            height: 42px;
+
+            overflow: hidden;
+
+            display: flex;
+
+            align-items: center;
+
+            background: linear-gradient(
+                90deg,
+                #fff0f2,
+                #ffd9de,
+                #fff0f2
+            );
+
+            border: 1px solid #f2a5ae;
+
+            border-radius: 10px;
+
+            box-shadow:
+                0 5px 15px rgba(220, 53, 69, 0.08);
+
+            flex-shrink: 1;
+        }
+
+
+        .nav-digital-text {
+            white-space: nowrap;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            color: #c92f4b;
+
+            padding-left: 100%;
+
+            animation:
+                navDigitalMove 12s linear infinite;
+        }
+
+
+        @keyframes navDigitalMove {
+
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+
+        }
+
+
+        /* =========================================================
+           NAVIGATION
+        ========================================================= */
+
+        nav {
+            margin-left: auto;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 28px;
+        }
+
+
+        nav a {
+            text-decoration: none;
+
+            color: #244f68;
+
+            font-size: 15px;
+
+            font-weight: 700;
+
+            transition: 0.3s ease;
+        }
+
+
+        nav a:hover {
+            color: #dc3545;
+        }
+
+
+        /* =========================================================
+           ENROLL BUTTON
+        ========================================================= */
+
+        .enquire-btn {
+            background: linear-gradient(
+                135deg,
+                #244f68,
+                #4e9cc0
+            );
+
+            color: white !important;
+
+            padding: 13px 22px;
+
+            border-radius: 30px;
+
+            box-shadow:
+                0 8px 18px rgba(36, 79, 104, 0.18);
+        }
+
+
+        .enquire-btn:hover {
+            transform: translateY(-2px);
+
+            color: white !important;
+        }
+
+
+        /* =========================================================
+           MOBILE MENU
+        ========================================================= */
+
+        .menu-icon {
+            display: none;
+
+            font-size: 28px;
+
+            cursor: pointer;
+
+            color: #244f68;
+        }
+
+
+        /* =========================================================
+           COMPETITION HERO
+        ========================================================= */
+
+        .competition-hero {
+
+            min-height: 330px;
+
+            background-image:
+
+                linear-gradient(
+                    rgba(15, 60, 82, 0.68),
+                    rgba(15, 60, 82, 0.68)
+                ),
+
+                url(
+                    "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1800&q=85"
+                );
+
+            background-size: cover;
+
+            background-position: center;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 60px 20px;
+        }
+
+
+        .competition-hero-content {
+            color: white;
+
+            max-width: 850px;
+        }
+
+
+        .competition-badge {
+            display: inline-block;
+
+            padding: 8px 18px;
+
+            border-radius: 30px;
+
+            background: rgba(255,255,255,0.15);
+
+            border: 1px solid rgba(255,255,255,0.4);
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .competition-hero h1 {
+            font-size: 48px;
+
+            margin-bottom: 12px;
+
+            font-weight: 800;
+        }
+
+
+        .competition-hero h1 span {
+            color: #8ed0ed;
+        }
+
+
+        .competition-hero p {
+            font-size: 17px;
+
+            line-height: 1.6;
+
+            color: #f2f8fb;
+        }
+
+
+        /* =========================================================
+           MAIN SECTION
+        ========================================================= */
+
+        .competition-section {
+
+            padding: 55px 20px 70px;
+
+            background:
+
+                linear-gradient(
+                    180deg,
+                    #eef7fa,
+                    #f7fbfc
+                );
+        }
+
+
+        .competition-container {
+
+            max-width: 1280px;
+
+            margin: auto;
+        }
+
+
+        /* =========================================================
+           HEADING
+        ========================================================= */
+
+        .section-heading {
+
+            text-align: center;
+
+            margin-bottom: 30px;
+        }
+
+
+        .section-heading span {
+
+            display: block;
+
+            font-size: 13px;
+
+            font-weight: 800;
+
+            letter-spacing: 2px;
+
+            color: #4e9cc0;
+
+            margin-bottom: 8px;
+        }
+
+
+        .section-heading h2 {
+
+            font-size: 38px;
+
+            color: #244f68;
+
+            margin-bottom: 8px;
+        }
+
+
+        .section-heading h2 b {
+            color: #dc3545;
+        }
+
+
+        .section-heading p {
+
+            color: #66859a;
+
+            font-size: 16px;
+        }
+
+
+        /* =========================================================
+           SCOREBOARD
+        ========================================================= */
+
+        .scoreboard {
+
+            background: white;
+
+            border-radius: 24px;
+
+            overflow: hidden;
+
+            border: 1px solid #dce8ee;
+
+            box-shadow:
+                0 15px 40px rgba(36, 79, 104, 0.10);
+        }
+
+
+        .scoreboard-top {
+
+            padding: 35px 20px;
+
+            text-align: center;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    #ffffff,
+                    #f5fbfd
+                );
+
+            border-top: 7px solid #2d789b;
+        }
+
+
+        .scoreboard-title {
+
+            font-size: 34px;
+
+            font-weight: 800;
+
+            color: #244f68;
+
+            margin-bottom: 8px;
+        }
+
+
+        /* =========================================================
+           TABLE
+        ========================================================= */
+
+        .table-wrapper {
+
+            width: 100%;
+
+            overflow-x: auto;
+        }
+
+
+        table {
+
+            width: 100%;
+
+            border-collapse: collapse;
+
+            min-width: 750px;
+        }
+
+
+        thead {
+
+            background:
+
+                linear-gradient(
+                    90deg,
+                    #244f68,
+                    #3784a5
+                );
+
+            color: white;
+        }
+
+
+        th {
+
+            padding: 19px 15px;
+
+            font-size: 16px;
+
+            font-weight: 800;
+
+            text-align: center;
+        }
+
+
+        td {
+
+            padding: 19px 15px;
+
+            text-align: center;
+
+            font-size: 16px;
+
+            color: #244f68;
+
+            border-bottom: 1px solid #dce8ee;
+
+            background: white;
+        }
+
+
+        tbody tr:nth-child(even) td {
+            background: #f2f8fa;
+        }
+
+
+        tbody tr:hover td {
+            background: #e8f4f8;
+        }
+
+
+        .student-name {
+            font-weight: 700;
+        }
+
+
+        .course-name {
+            font-weight: 600;
+        }
+
+
+        .joined-date {
+
+            font-weight: 700;
+
+            color: #327fa2;
+        }
+
+
+        .mark {
+
+            font-size: 20px;
+
+            font-weight: 800;
+
+            color: #2d789b;
+        }
+
+
+        /* =========================================================
+           LOADING
+        ========================================================= */
+
+        .loading {
+
+            text-align: center;
+
+            padding: 40px;
+
+            font-size: 17px;
+
+            color: #66859a;
+        }
+
+
+        .error-message {
+
+            text-align: center;
+
+            padding: 40px;
+
+            color: #dc3545;
+
+            font-weight: 700;
+        }
+
+
+        /* =========================================================
+           STATISTICS
+        ========================================================= */
+
+        .stats-bar {
+
+            margin-top: 30px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 20px;
+        }
+
+
+        .stat-card {
+
+            background: white;
+
+            border: 1px solid #dce8ee;
+
+            border-radius: 18px;
+
+            padding: 25px 20px;
+
+            text-align: center;
+
+            box-shadow:
+                0 10px 25px rgba(36, 79, 104, 0.08);
+
+            transition: 0.3s ease;
+        }
+
+
+        .stat-card:hover {
+
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 15px 30px rgba(36, 79, 104, 0.12);
+        }
+
+
+        .stat-number {
+
+            font-size: 30px;
+
+            font-weight: 800;
+
+            color: #244f68;
+
+            margin-bottom: 5px;
+        }
+
+
+        /* =========================================================
+           LEADING MARK
+        ========================================================= */
+
+        #leadingMark {
+
+            color: #244f68;
+        }
+
+
+        .stat-label {
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            color: #6b899b;
+
+            text-transform: uppercase;
+
+            letter-spacing: 0.5px;
+        }
+
+
+        /* =========================================================
+           BACK HOME
+        ========================================================= */
+
+        .back-home {
+
+            display: flex;
+
+            justify-content: center;
+
+            margin-top: 35px;
+        }
+
+
+        .back-home a {
+
+            display: inline-block;
+
+            text-decoration: none;
+
+            color: white;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    #244f68,
+                    #327fa2
+                );
+
+            padding: 14px 30px;
+
+            border-radius: 30px;
+
+            font-size: 16px;
+
+            font-weight: 700;
+
+            transition: 0.3s ease;
+
+            box-shadow:
+                0 8px 18px rgba(36, 79, 104, 0.18);
+        }
+
+
+        .back-home a:hover {
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+
+            background: #173e54;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 35px 20px;
+        }
+
+
+        footer img {
+
+            width: 135px;
+
+            margin-bottom: 10px;
+
+            background: white;
+
+            padding: 5px;
+
+            border-radius: 8px;
+        }
+
+
+        footer p {
+
+            margin-bottom: 15px;
+
+            font-size: 15px;
+        }
+
+
+        .footer-links {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 25px;
+
+            margin-bottom: 18px;
+
+            flex-wrap: wrap;
+        }
+
+
+        .footer-links a {
+
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            font-weight: 600;
+        }
+
+
+        .footer-links a:hover {
+            color: #8ed0ed;
+        }
+
+
+        footer small {
+
+            color: #c5d8e2;
+
+            font-size: 12px;
+        }
+
+
+        /* =========================================================
+           TABLET
+        ========================================================= */
+
+        @media (max-width: 900px) {
+
+            .nav-container {
+
+                padding: 8px 15px;
+
+                gap: 10px;
+            }
+
+
+            .logo img {
+                width: 120px;
+            }
+
+
+            .nav-digital-board {
+
+                width: 260px;
+
+                height: 38px;
+            }
+
+
+            .nav-digital-text {
+                font-size: 11px;
+            }
+
+
+            nav {
+
+                display: none;
+
+                position: absolute;
+
+                top: 82px;
+
+                left: 0;
+
+                width: 100%;
+
+                background: white;
+
+                padding: 20px;
+
+                flex-direction: column;
+
+                gap: 18px;
+
+                box-shadow:
+                    0 10px 20px rgba(0,0,0,0.08);
+            }
+
+
+            nav.active {
+                display: flex;
+            }
+
+
+            .menu-icon {
+
+                display: block;
+
+                margin-left: auto;
+            }
+
+
+            .competition-hero {
+                min-height: 300px;
+            }
+
+
+            .competition-hero h1 {
+                font-size: 36px;
+            }
+
+
+            .competition-hero p {
+                font-size: 15px;
+            }
+
+
+            .section-heading h2 {
+                font-size: 30px;
+            }
+
+
+            .scoreboard-title {
+                font-size: 27px;
+            }
+
+
+            .stats-bar {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+
+        /* =========================================================
+           MOBILE
+        ========================================================= */
+
+        @media (max-width: 600px) {
+
+            .nav-container {
+
+                min-height: 70px;
+            }
+
+
+            .logo img {
+                width: 105px;
+            }
+
+
+            .nav-digital-board {
+
+                width: 180px;
+
+                height: 34px;
+            }
+
+
+            .nav-digital-text {
+                font-size: 9px;
+            }
+
+
+            .competition-hero {
+
+                min-height: 260px;
+
+                padding: 40px 15px;
+            }
+
+
+            .competition-hero h1 {
+                font-size: 30px;
+            }
+
+
+            .competition-section {
+
+                padding: 40px 12px 60px;
+            }
+
+
+            .scoreboard {
+                border-radius: 18px;
+            }
+
+
+            .scoreboard-top {
+
+                padding: 25px 15px;
+            }
+
+
+            .scoreboard-title {
+                font-size: 23px;
+            }
+
+
+            th,
+            td {
+
+                padding: 15px 10px;
+
+                font-size: 14px;
+            }
+
+
+            .mark {
+                font-size: 17px;
+            }
+
+
+            .stats-bar {
+
+                grid-template-columns: 1fr 1fr;
+
+                gap: 12px;
+            }
+
+
+            .stat-card {
+
+                padding: 20px 10px;
+            }
+
+
+            .stat-number {
+                font-size: 25px;
+            }
+
+
+            .stat-label {
+                font-size: 11px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
+
+<header class="navbar">
+
+    <div class="nav-container">
+
+
+        <div class="logo">
+
+            <img
+                src="logo.jpeg"
+                alt="LIVEWIRE Vadapalani"
+            >
+
+        </div>
+
+
+        <div class="nav-digital-board">
+
+            <div class="nav-digital-text">
+
+                LIVEWIRE VADAPALANI -
+                SOFTWARE TRAINING CENTRE |
+                ADMISSION OPEN |
+                JOIN NOW
+
+            </div>
+
+        </div>
+
+
+        <nav id="navMenu">
+
+            <a href="index.html">
+                Home
+            </a>
+
+
+            <a href="index.html#why-us">
+                Why Us
+            </a>
+
+
+            <a href="index.html#about">
+                About
+            </a>
+
+
+            <a href="index.html#contact">
+                Contact
+            </a>
+
+
+            <a
+                href="index.html#register"
+                class="enquire-btn"
+            >
+                Enroll Now
+            </a>
+
+        </nav>
+
+
+        <div
+            class="menu-icon"
+            onclick="toggleMenu()"
+        >
+            ☰
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     COMPETITION HERO
+========================================================= -->
+
+<section class="competition-hero">
+
+    <div class="competition-hero-content">
+
+        <div class="competition-badge">
+            LIVEWIRE VADAPALANI
+        </div>
+
+
+        <h1>
+            Weekly <span>Competition</span>
+        </h1>
+
+
+        <p>
+            Check the latest competition scores,
+            student performance and course-wise results.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     COMPETITION SECTION
+========================================================= -->
+
+<section class="competition-section">
+
+    <div class="competition-container">
+
+
+        <div class="section-heading">
+
+            <span>
+                PERFORMANCE BOARD
+            </span>
+
+
+            <h2>
+                Competition <b>Results</b>
+            </h2>
+
+
+            <p>
+                Student scores updated from the Livewire Google Sheet.
+            </p>
+
+        </div>
+
+
+
+        <!-- =====================================================
+             SCOREBOARD
+        ====================================================== -->
+
+        <div class="scoreboard">
+
+
+            <div class="scoreboard-top">
+
+                <div class="scoreboard-title">
+
+                    Competition Results
+
+                </div>
+
+            </div>
+
+
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                SNO
+                            </th>
+
+                            <th>
+                                Name
+                            </th>
+
+                            <th>
+                                Course
+                            </th>
+
+                            <th>
+                                Joined Date
+                            </th>
+
+                            <th>
+                                Mark
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="competitionBody">
+
+                        <tr>
+
+                            <td
+                                colspan="5"
+                                class="loading"
+                            >
+                                Loading competition results...
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================================================
+             STATISTICS
+        ====================================================== -->
+
+        <div class="stats-bar">
+
+
+            <!-- TOTAL STUDENTS -->
+
+            <div class="stat-card">
+
+                <div
+                    class="stat-number"
+                    id="totalStudents"
+                >
+                    0
+                </div>
+
+
+                <div class="stat-label">
+                    Total Students
+                </div>
+
+            </div>
+
+
+
+            <!-- TOTAL COURSES -->
+
+            <div class="stat-card">
+
+                <div
+                    class="stat-number"
+                    id="totalCourses"
+                >
+                    0
+                </div>
+
+
+                <div class="stat-label">
+                    Total Courses
+                </div>
+
+            </div>
+
+
+
+            <!-- LEADING MARK -->
+
+            <div class="stat-card">
+
+                <div
+                    class="stat-number"
+                    id="leadingMark"
+                >
+                    0
+                </div>
+
+
+                <div class="stat-label">
+                    Leading Mark
+                </div>
+
+            </div>
+
+
+
+            <!-- AVERAGE MARK -->
+
+            <div class="stat-card">
+
+                <div
+                    class="stat-number"
+                    id="averageMark"
+                >
+                    0%
+                </div>
+
+
+                <div class="stat-label">
+                    Average Percentage
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================================================
+             BACK HOME
+        ====================================================== -->
+
+        <div class="back-home">
+
+            <a href="index.html">
+                ← Back to Home
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <img
+        src="logo.jpeg"
+        alt="LIVEWIRE"
+    >
+
+
+    <p>
+        LIVEWIRE - Vadapalani
+    </p>
+
+
+    <div class="footer-links">
+
+        <a href="index.html">
+            Home
+        </a>
+
+
+        <a href="index.html#why-us">
+            Why Us
+        </a>
+
+
+        <a href="index.html#about">
+            About
+        </a>
+
+
+        <a href="index.html#contact">
+            Contact
+        </a>
+
+    </div>
+
+
+    <small>
+        © 2026 LIVEWIRE. All Rights Reserved.
+    </small>
+
+</footer>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+
+/* =========================================================
+   GOOGLE APPS SCRIPT WEB APP URL
+========================================================= */
+
+const API_URL =
+"https://script.google.com/macros/s/AKfycbxxFu4sx7iNpyB2j8CRsUq_A4s2MKJK6c-TTfVbX_hOdIAVCkdXnMA3rnrlD2zzmMdC/exec";
+
+
+
+/* =========================================================
+   LOAD COMPETITION DATA
+========================================================= */
+
+async function loadCompetitionData() {
+
+    const tableBody =
+        document.getElementById("competitionBody");
+
+
+    try {
+
+        const response = await fetch(
+
+            API_URL + "?t=" + Date.now(),
+
+            {
+                method: "GET",
+
+                cache: "no-store"
+            }
+
+        );
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                "Unable to connect to Google Sheet."
+            );
+
+        }
+
+
+        const data =
+            await response.json();
+
+
+        console.log(
+            "LIVEWIRE Competition Data:",
+            data
+        );
+
+
+        /* =====================================================
+           CHECK DATA
+        ====================================================== */
+
+        if (
+            !Array.isArray(data) ||
+            data.length === 0
+        ) {
+
+            tableBody.innerHTML = `
+
+                <tr>
+
+                    <td
+                        colspan="5"
+                        class="loading"
+                    >
+                        No competition results available.
+                    </td>
+
+                </tr>
+
+            `;
+
+
+            updateStatistics([]);
+
+
+            return;
+
+        }
+
+
+
+        /* =====================================================
+           CLEAR TABLE
+        ====================================================== */
+
+        tableBody.innerHTML = "";
+
+
+
+        /* =====================================================
+           DISPLAY STUDENTS
+        ====================================================== */
+
+        data.forEach(
+            (student, index) => {
+
+
+                const row =
+                    document.createElement("tr");
+
+
+                /* =================================================
+                   SNO
+                ================================================= */
+
+                const sno =
+                    student.sno !== undefined &&
+                    student.sno !== null &&
+                    student.sno !== ""
+
+                        ? student.sno
+
+                        : index + 1;
+
+
+
+                /* =================================================
+                   NAME
+                ================================================= */
+
+                const name =
+                    student.name !== undefined &&
+                    student.name !== null
+
+                        ? student.name
+
+                        : "";
+
+
+
+                /* =================================================
+                   COURSE
+                ================================================= */
+
+                const course =
+                    student.course !== undefined &&
+                    student.course !== null
+
+                        ? student.course
+
+                        : "";
+
+
+
+                /* =================================================
+                   JOINED DATE
+                ================================================= */
+
+                const joinedDate =
+                    student.joinedDate !== undefined &&
+                    student.joinedDate !== null
+
+                        ? student.joinedDate
+
+                        : "";
+
+
+
+                /* =================================================
+                   MARK
+                ================================================= */
+
+                const mark =
+                    student.mark !== undefined &&
+                    student.mark !== null
+
+                        ? student.mark
+
+                        : "";
+
+
+
+                row.innerHTML = `
+
+                    <td>
+                        ${escapeHTML(sno)}
+                    </td>
+
+
+                    <td class="student-name">
+                        ${escapeHTML(name)}
+                    </td>
+
+
+                    <td class="course-name">
+                        ${escapeHTML(course)}
+                    </td>
+
+
+                    <td class="joined-date">
+                        ${escapeHTML(joinedDate)}
+                    </td>
+
+
+                    <td class="mark">
+                        ${escapeHTML(mark)}
+                    </td>
+
+                `;
+
+
+                tableBody.appendChild(row);
+
+            }
+        );
+
+
+
+        /* =====================================================
+           UPDATE STATISTICS
+        ====================================================== */
+
+        updateStatistics(data);
+
+
+    }
+
+
+    catch (error) {
+
+
+        console.error(
+            "Competition loading error:",
+            error
+        );
+
+
+        tableBody.innerHTML = `
+
+            <tr>
+
+                <td
+                    colspan="5"
+                    class="error-message"
+                >
+                    Unable to load competition results.
+                    Please try again.
+                </td>
+
+            </tr>
+
+        `;
+
+
+        document.getElementById(
+            "totalStudents"
+        ).textContent = "0";
+
+
+        document.getElementById(
+            "totalCourses"
+        ).textContent = "0";
+
+
+        document.getElementById(
+            "leadingMark"
+        ).textContent = "0";
+
+
+        document.getElementById(
+            "averageMark"
+        ).textContent = "0%";
+
+    }
+
+}
+
+
+
+/* =========================================================
+   UPDATE STATISTICS
+========================================================= */
+
+function updateStatistics(data) {
+
+
+    /* =====================================================
+       TOTAL STUDENTS
+    ====================================================== */
+
+    const totalStudents =
+        data.length;
+
+
+    document.getElementById(
+        "totalStudents"
+    ).textContent =
+        totalStudents;
+
+
+
+    /* =====================================================
+       TOTAL UNIQUE COURSES
+    ====================================================== */
+
+    const courses =
+        data
+
+            .map(
+                student =>
+                    String(
+                        student.course ?? ""
+                    ).trim()
+            )
+
+            .filter(
+                course =>
+                    course !== ""
+            );
+
+
+    const uniqueCourses =
+        new Set(courses);
+
+
+    document.getElementById(
+        "totalCourses"
+    ).textContent =
+        uniqueCourses.size;
+
+
+
+    /* =====================================================
+       MARKS
+    ====================================================== */
+
+    const marks =
+        data
+
+            .map(
+                student => {
+
+                    const value =
+                        String(
+                            student.mark ?? ""
+                        ).trim();
+
+
+                    return parseFloat(value);
+
+                }
+            )
+
+            .filter(
+                mark =>
+                    !isNaN(mark)
+            );
+
+
+
+    /* =====================================================
+       LEADING MARK
+       HIGHEST MARK
+    ====================================================== */
+
+    let leadingMark = 0;
+
+
+    if (marks.length > 0) {
+
+        leadingMark =
+            Math.max(...marks);
+
+    }
+
+
+    document.getElementById(
+        "leadingMark"
+    ).textContent =
+        leadingMark;
+
+
+
+    /* =====================================================
+       AVERAGE MARK
+    ====================================================== */
+
+    let average = 0;
+
+
+    if (marks.length > 0) {
+
+
+        const total =
+            marks.reduce(
+                (
+                    sum,
+                    mark
+                ) =>
+                    sum + mark,
+
+                0
+            );
+
+
+        average =
+            total / marks.length;
+
+    }
+
+
+    document.getElementById(
+        "averageMark"
+    ).textContent =
+        average.toFixed(1) + "%";
+
+}
+
+
+
+/* =========================================================
+   HTML ESCAPE
+========================================================= */
+
+function escapeHTML(value) {
+
+    return String(value)
+
+        .replace(
+            /&/g,
+            "&amp;"
+        )
+
+        .replace(
+            /</g,
+            "&lt;"
+        )
+
+        .replace(
+            />/g,
+            "&gt;"
+        )
+
+        .replace(
+            /"/g,
+            "&quot;"
+        )
+
+        .replace(
+            /'/g,
+            "&#039;"
+        );
+
+}
+
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+function toggleMenu() {
+
+    const navMenu =
+        document.getElementById(
+            "navMenu"
+        );
+
+
+    navMenu.classList.toggle(
+        "active"
+    );
+
+}
+
+
+
+/* =========================================================
+   START
+========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        loadCompetitionData();
+
+    }
+);
+
+
+</script>
+
+
+</body>
+
+</html>

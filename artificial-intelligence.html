@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Artificial Intelligence | Livewire</title>
+
+    <link rel="stylesheet" href="code.css">
+
+
+    <style>
+
+        /* =========================================================
+           ARTIFICIAL INTELLIGENCE HERO
+        ========================================================= */
+
+        .coding-hero {
+
+            min-height: 55vh;
+
+            position: relative;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background-image:
+                url("https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=2000&q=85");
+
+            background-size: cover;
+
+            background-position: center;
+
+        }
+
+
+        /* =========================================================
+           HERO OVERLAY
+        ========================================================= */
+
+        .coding-hero-overlay {
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(24, 59, 82, 0.94),
+                    rgba(38, 91, 116, 0.82),
+                    rgba(76, 160, 194, 0.38)
+                );
+
+        }
+
+
+        /* =========================================================
+           HERO CONTENT
+        ========================================================= */
+
+        .coding-hero-content {
+
+            position: relative;
+
+            z-index: 2;
+
+            text-align: center;
+
+            color: white;
+
+            padding: 130px 20px 60px;
+
+        }
+
+
+        .coding-label {
+
+            font-size: 13px;
+
+            letter-spacing: 3px;
+
+            font-weight: bold;
+
+            color: #9ed7ea;
+
+        }
+
+
+        .coding-hero h1 {
+
+            font-size: 58px;
+
+            margin: 18px 0;
+
+            line-height: 1.1;
+
+        }
+
+
+        .coding-hero h1 span {
+
+            color: #62a2bf;
+
+        }
+
+
+        .coding-hero-content p {
+
+            max-width: 650px;
+
+            margin: auto;
+
+            font-size: 17px;
+
+            line-height: 1.7;
+
+            color: #e8f4f7;
+
+        }
+
+
+        /* =========================================================
+           AI COURSE SECTION
+        ========================================================= */
+
+        .course-detail-section {
+
+            padding: 80px 20px 90px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f2f8fb,
+                    #eef7fa,
+                    #f8fcfd
+                );
+
+            min-height: 500px;
+
+        }
+
+
+        /* =========================================================
+           SECTION HEADING
+        ========================================================= */
+
+        .section-heading {
+
+            text-align: center;
+
+            max-width: 850px;
+
+            margin: 0 auto;
+
+        }
+
+
+        .section-heading > span {
+
+            display: block;
+
+            color: #347b9d;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .section-heading h2 {
+
+            margin: 0;
+
+            font-size: 40px;
+
+            color: #244f68;
+
+            line-height: 1.2;
+
+        }
+
+
+        .section-heading h2 b {
+
+            color: #347b9d;
+
+        }
+
+
+        .section-heading p {
+
+            color: #78909c;
+
+            margin-top: 14px;
+
+            font-size: 15px;
+
+        }
+
+
+        /* =========================================================
+           COURSE PROGRAM BOX
+        ========================================================= */
+
+        .course-detail-grid {
+
+            width: 100%;
+
+            max-width: 770px;
+
+            margin: 40px auto 0;
+
+            padding: 35px 38px 40px;
+
+            background: #ffffff;
+
+            border-radius: 25px;
+
+            border: 1px solid #dbe8ed;
+
+            box-shadow:
+                0 18px 45px rgba(36, 79, 104, 0.10);
+
+            position: relative;
+
+            overflow: hidden;
+
+            box-sizing: border-box;
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 13px;
+
+        }
+
+
+        /* =========================================================
+           TOP BLUE LINE
+        ========================================================= */
+
+        .course-detail-grid::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 7px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #244f68,
+                    #62a2bf
+                );
+
+        }
+
+
+        /* =========================================================
+           PROGRAM TITLE
+        ========================================================= */
+
+        .program-title {
+
+            text-align: center;
+
+            color: #244f68;
+
+            font-size: 28px;
+
+            font-weight: 700;
+
+            margin: 5px 0 28px;
+
+        }
+
+
+        .program-title span {
+
+            color: #347b9d;
+
+        }
+
+
+        /* =========================================================
+           COURSE CARD
+        ========================================================= */
+
+        .course-detail-card {
+
+            position: relative;
+
+            text-decoration: none;
+
+            width: 100%;
+
+            min-height: 70px;
+
+            box-sizing: border-box;
+
+            display: flex;
+
+            align-items: center;
+
+            padding: 12px 18px;
+
+            gap: 15px;
+
+            border-radius: 13px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #f4f9fb,
+                    #ffffff
+                );
+
+            border: 1px solid #d8e7ed;
+
+            color: #244f68;
+
+            overflow: hidden;
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease,
+                background 0.3s ease,
+                border-color 0.3s ease;
+
+        }
+
+
+        /* =========================================================
+           LEFT BLUE LINE
+        ========================================================= */
+
+        .course-detail-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+
+            top: 0;
+
+            width: 5px;
+
+            height: 100%;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #244f68,
+                    #62a2bf
+                );
+
+            border-radius: 10px 0 0 10px;
+
+        }
+
+
+        /* =========================================================
+           COURSE ICON
+        ========================================================= */
+
+        .course-detail-icon {
+
+            width: 40px;
+
+            height: 40px;
+
+            min-width: 40px;
+
+            border-radius: 10px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background: #eaf4f8;
+
+            border: 1px solid #d3e7ef;
+
+            font-size: 20px;
+
+            margin-left: 8px;
+
+            transition: 0.3s;
+
+        }
+
+
+        .course-detail-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            border-radius: 9px;
+        }
+
+        /* =========================================================
+           COURSE NAME
+        ========================================================= */
+
+        .course-detail-card h3 {
+
+            margin: 0;
+
+            color: #244f68;
+
+            font-size: 18px;
+
+            font-weight: 700;
+
+            flex: 1;
+
+        }
+
+
+        /* =========================================================
+           ARROW
+        ========================================================= */
+
+        .course-arrow {
+
+            color: #347b9d;
+
+            font-size: 21px;
+
+            margin-right: 5px;
+
+            transition: 0.3s;
+
+        }
+
+
+        /* =========================================================
+           HOVER
+        ========================================================= */
+
+        .course-detail-card:hover {
+
+            transform: translateX(5px);
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #eaf4f8,
+                    #f8fcfd
+                );
+
+            border-color: #a9ccdc;
+
+            box-shadow:
+                0 8px 22px rgba(36, 79, 104, 0.10);
+
+        }
+
+
+        .course-detail-card:hover .course-arrow {
+
+            transform: translateX(6px);
+
+            color: #244f68;
+
+        }
+
+
+        .course-detail-card:hover .course-detail-icon {
+
+            transform: scale(1.06);
+
+            background: #dceef5;
+
+        }
+
+
+        /* =========================================================
+           BACK BUTTON
+        ========================================================= */
+
+        .back-course-btn {
+
+            display: block;
+
+            width: fit-content;
+
+            margin: 45px auto 0;
+
+            padding: 13px 27px;
+
+            border-radius: 28px;
+
+            text-decoration: none;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #244f68,
+                    #2d6683
+                );
+
+            color: white;
+
+            font-size: 15px;
+
+            font-weight: 700;
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+
+            box-shadow:
+                0 10px 25px rgba(36, 79, 104, 0.16);
+
+        }
+
+
+        .back-course-btn:hover {
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 15px 30px rgba(36, 79, 104, 0.24);
+
+        }
+
+
+        /* =========================================================
+           MOBILE
+        ========================================================= */
+
+        @media (max-width: 600px) {
+
+            .coding-hero {
+
+                min-height: 65vh;
+
+                background-image:
+                    linear-gradient(
+                        135deg,
+                        rgba(11, 35, 52, 0.94),
+                        rgba(24, 79, 102, 0.80),
+                        rgba(76, 160, 194, 0.38)
+                    ),
+                    url("https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=90");
+
+                background-size: cover;
+
+                background-position: center;
+
+            }
+
+
+            .coding-hero-content {
+
+                padding:
+                    165px
+                    22px
+                    55px;
+
+            }
+
+
+            .coding-label {
+
+                font-size: 11px;
+
+                letter-spacing: 2px;
+
+            }
+
+
+            .coding-hero h1 {
+
+                font-size: 42px;
+
+            }
+
+
+            .coding-hero-content p {
+
+                font-size: 15px;
+
+                line-height: 1.6;
+
+            }
+
+
+            .course-detail-section {
+
+                padding:
+                    65px
+                    18px
+                    75px;
+
+            }
+
+
+            .section-heading h2 {
+
+                font-size: 31px;
+
+            }
+
+
+            .section-heading p {
+
+                font-size: 14px;
+
+                line-height: 1.6;
+
+            }
+
+
+            .course-detail-grid {
+
+                padding:
+                    28px
+                    16px
+                    25px;
+
+                border-radius: 20px;
+
+                gap: 11px;
+
+            }
+
+
+            .program-title {
+
+                font-size: 23px;
+
+                margin-bottom: 20px;
+
+            }
+
+
+            .course-detail-card {
+
+                min-height: 62px;
+
+                padding:
+                    10px
+                    12px;
+
+                gap: 10px;
+
+            }
+
+
+            .course-detail-icon {
+
+                width: 35px;
+
+                height: 35px;
+
+                min-width: 35px;
+
+                font-size: 17px;
+
+                margin-left: 5px;
+
+            }
+
+
+            .course-detail-card h3 {
+
+                font-size: 14px;
+
+            }
+
+
+            .course-arrow {
+
+                font-size: 17px;
+
+                margin-right: 2px;
+
+            }
+
+
+            .back-course-btn {
+
+                font-size: 14px;
+
+                padding:
+                    12px
+                    22px;
+
+            }
+
+        }
+
+
+        /* =========================================================
+           VERY SMALL MOBILE
+        ========================================================= */
+
+        @media (max-width: 380px) {
+
+            .coding-hero h1 {
+
+                font-size: 36px;
+
+            }
+
+
+            .course-detail-section {
+
+                padding-left: 14px;
+
+                padding-right: 14px;
+
+            }
+
+
+            .course-detail-grid {
+
+                padding:
+                    25px
+                    12px
+                    22px;
+
+            }
+
+
+            .course-detail-card h3 {
+
+                font-size: 13px;
+
+            }
+
+
+            .course-detail-icon {
+
+                width: 33px;
+
+                height: 33px;
+
+                min-width: 33px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================================
+         NAVBAR
+    ========================================================= -->
+
+    <header class="navbar">
+
+        <div class="nav-container">
+
+
+            <!-- LOGO -->
+
+            <a href="index.html" class="logo">
+
+                <img
+                    src="logo.jpeg"
+                    alt="Livewire Logo"
+                >
+
+            </a>
+
+
+            <!-- DIGITAL BOARD -->
+
+            <div class="nav-digital-board">
+
+                <div class="nav-digital-text">
+
+                    LIVEWIRE VADAPALANI - SOFTWARE TRAINING CENTRE |
+                    ADMISSIONS OPEN |
+                    JOIN NOW
+
+                </div>
+
+            </div>
+
+
+            <!-- NAVIGATION -->
+
+            <nav id="mainNav">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+
+                <a href="index.html#why-us">
+                    Why Us
+                </a>
+
+
+                <a href="index.html#about">
+                    About
+                </a>
+
+
+                <a href="index.html#contact">
+                    Contact
+                </a>
+
+
+                <a
+                    href="index.html#register"
+                    class="enquire-btn"
+                >
+                    Enquire Now
+                </a>
+
+            </nav>
+
+
+            <!-- MOBILE MENU -->
+
+            <div
+                class="menu-icon"
+                onclick="toggleMenu()"
+            >
+
+                ☰
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================================
+         ARTIFICIAL INTELLIGENCE HERO
+    ========================================================= -->
+
+    <section class="coding-hero">
+
+        <div class="coding-hero-overlay"></div>
+
+
+        <div class="coding-hero-content">
+
+            <span class="coding-label">
+
+                PROFESSIONAL TRAINING
+
+            </span>
+
+
+            <h1>
+
+                Artificial Intelligence
+
+                <span>
+                    Courses
+                </span>
+
+            </h1>
+
+
+            <p>
+
+                Build your skills with
+                industry-focused Artificial Intelligence training.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         ARTIFICIAL INTELLIGENCE PROGRAMS
+    ========================================================= -->
+
+    <section class="course-detail-section">
+
+
+        <div class="section-heading">
+
+            <span>
+
+                ARTIFICIAL INTELLIGENCE
+
+            </span>
+
+
+            <h2>
+
+                Choose Your
+
+                <b>
+                    Course
+                </b>
+
+            </h2>
+
+
+            <p>
+
+                Select a course below to explore the training program.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- =====================================================
+             AI PROGRAM BOX
+        ===================================================== -->
+
+        <div class="course-detail-grid">
+
+
+            <div class="program-title">
+
+                Artificial Intelligence
+                <span>Programs</span>
+
+            </div>
+
+
+
+            <!-- DEEP LEARNING -->
+
+            <a
+                href="#"
+                class="course-detail-card"
+            >
+
+                <div class="course-detail-icon">
+                    <img src="deep-logo.jpg" alt="Deep Learning Logo">
+                </div>
+
+
+                <h3>
+
+                    Deep Learning
+
+                </h3>
+
+
+                <div class="course-arrow">
+
+                    →
+
+                </div>
+
+            </a>
+
+
+
+            <!-- MACHINE LEARNING -->
+
+            <a
+                href="courseon-ML.pdf"
+                class="course-detail-card"
+                target="_blank"
+            >
+
+                <div class="course-detail-icon">
+                    <img src="machine-logo.jpg" alt="Machine Learning Logo">
+                </div>
+
+
+                <h3>
+
+                    Machine Learning
+
+                </h3>
+
+
+                <div class="course-arrow">
+
+                    →
+
+                </div>
+
+            </a>
+
+
+
+            <!-- DATA SCIENCE -->
+
+            <a
+                href="courseon-DS.pdf"
+                class="course-detail-card"
+                target="_blank"
+            >
+
+                <div class="course-detail-icon">
+                    <img src="data-logo.png" alt="Data Science Logo">
+                </div>
+
+
+                <h3>
+
+                    Data Science
+
+                </h3>
+
+
+                <div class="course-arrow">
+
+                    →
+
+                </div>
+
+            </a>
+
+
+
+            <!-- DATA SCIENCE & DATA ENGINEERING -->
+
+            <a
+                href="courseon-DSDE.pdf"
+                class="course-detail-card"
+                target="_blank"
+            >
+
+                <div class="course-detail-icon">
+                    <img src="de-logo.jfif" alt="Data Science and Data Engineering Logo">
+                </div>
+
+
+                <h3>
+
+                    Data Science &amp; Data Engineering
+
+                </h3>
+
+
+                <div class="course-arrow">
+
+                    →
+
+                </div>
+
+            </a>
+
+
+
+            <!-- DATA ANALYTICS USING POWER BI -->
+
+            <a
+                href="courseon-dataBI.pdf"
+                class="course-detail-card"
+                target="_blank"
+            >
+
+                <div class="course-detail-icon">
+                    <img src="da-logo.jpg" alt="Data Analytics Using Power BI Logo">
+                </div>
+
+
+                <h3>
+
+                    Data Analytics Using Power BI
+
+                </h3>
+
+
+                <div class="course-arrow">
+
+                    →
+
+                </div>
+
+            </a>
+
+
+        </div>
+
+
+
+        <!-- =====================================================
+             BACK BUTTON
+        ===================================================== -->
+
+        <a
+            href="coding.html"
+            class="back-course-btn"
+        >
+
+            ← Back to Coding
+
+        </a>
+
+
+    </section>
+
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================= -->
+
+    <footer>
+
+
+        <img
+            src="logo.jpeg"
+            alt="Livewire Logo"
+        >
+
+
+        <p>
+
+            Industry Ready Training for Your Career
+
+        </p>
+
+
+        <div class="footer-links">
+
+
+            <a href="index.html">
+
+                Home
+
+            </a>
+
+
+
+            <a href="index.html#why-us">
+
+                Why Us
+
+            </a>
+
+
+            <a href="index.html#about">
+
+                About
+
+            </a>
+
+
+            <a href="index.html#contact">
+
+                Contact
+
+            </a>
+
+
+        </div>
+
+
+        <small>
+
+            © 2026 Livewire. All Rights Reserved.
+
+        </small>
+
+
+    </footer>
+
+
+
+    <!-- =========================================================
+         MOBILE MENU SCRIPT
+    ========================================================= -->
+
+    <script>
+
+        function toggleMenu() {
+
+            const nav =
+                document.getElementById("mainNav");
+
+            nav.classList.toggle("active");
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

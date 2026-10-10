@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>C - Course On | Livewire</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f2f8fb;
+            color: #244f68;
+        }
+
+        .pdf-page {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pdf-header {
+            height: 70px;
+            padding: 0 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            background: white;
+
+            border-bottom: 1px solid #dce7ed;
+
+            box-shadow:
+                0 4px 15px rgba(36, 79, 104, 0.10);
+
+            z-index: 10;
+        }
+
+        .pdf-header img {
+            width: 125px;
+            height: auto;
+        }
+
+        .pdf-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #244f68;
+        }
+
+        .back-btn {
+            text-decoration: none;
+
+            padding: 10px 18px;
+
+            border-radius: 22px;
+
+            background: #4b4cff;
+
+            color: white;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            background: #244f68;
+            transform: translateY(-2px);
+        }
+
+        .pdf-container {
+            flex: 1;
+            width: 100%;
+            background: #e9f0f4;
+        }
+
+        .pdf-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+
+        @media (max-width: 600px) {
+
+            .pdf-header {
+                height: 62px;
+                padding: 0 15px;
+            }
+
+            .pdf-header img {
+                width: 105px;
+            }
+
+            .pdf-title {
+                font-size: 14px;
+            }
+
+            .back-btn {
+                padding: 8px 13px;
+                font-size: 11px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <div class="pdf-page">
+
+
+        <!-- HEADER -->
+
+        <header class="pdf-header">
+
+
+            <a href="coding.html">
+
+                <img
+                    src="logo.jpeg"
+                    alt="Livewire Logo"
+                >
+
+            </a>
+
+
+            <div class="pdf-title">
+
+                C - Course On
+
+            </div>
+
+
+            <a
+                href="coding.html"
+                class="back-btn"
+            >
+
+                ← Back
+
+            </a>
+
+
+        </header>
+
+
+
+        <!-- PDF -->
+
+        <main class="pdf-container">
+
+
+            <iframe
+                src="course-on-c.pdf"
+                title="C Course On PDF"
+            >
+            </iframe>
+
+
+        </main>
+
+
+    </div>
+
+
+</body>
+
+</html>

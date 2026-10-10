@@ -1,0 +1,2602 @@
+/* =========================================================
+   LIVEWIRE WEBSITE - COMPLETE CSS
+   BLUE THEME
+   HOME + MOBILE + CODING / NON-CODING PAGES
+   PROFILE REMOVED
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #244f68;
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    background: linear-gradient(
+        90deg,
+        #fff1f3,
+        #eef7fa,
+        #fff1f3
+    );
+
+    border-bottom: 1px solid #dce7ed;
+
+    box-shadow:
+        0 4px 18px rgba(36, 79, 104, 0.08);
+}
+
+.nav-container {
+    max-width: 1250px;
+    margin: auto;
+    min-height: 82px;
+    padding: 8px 25px;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    cursor: default;
+}
+
+.logo img {
+    width: 145px;
+    height: auto;
+    display: block;
+}
+
+
+/* =========================================================
+   DIGITAL BOARD
+========================================================= */
+
+.nav-digital-board {
+    width: 430px;
+    height: 42px;
+
+    overflow: hidden;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    flex-shrink: 1;
+
+    border-radius: 8px;
+
+    background: linear-gradient(
+        90deg,
+        #fff0f2,
+        #ffd9de,
+        #fff0f2
+    );
+
+    border: 1px solid #f2a5ae;
+
+    box-shadow:
+        inset 0 0 10px rgba(220, 53, 69, 0.12),
+        0 3px 12px rgba(220, 53, 69, 0.12);
+}
+
+.nav-digital-text {
+    white-space: nowrap;
+
+    font-family: "Courier New", monospace;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    color: #c92f4b;
+
+    text-shadow:
+        0 0 4px rgba(201, 47, 75, 0.25);
+
+    animation:
+        navDigitalMove 12s linear infinite;
+}
+
+@keyframes navDigitalMove {
+
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+
+}
+
+
+/* =========================================================
+   NAV LINKS
+========================================================= */
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-left: auto;
+}
+
+nav a {
+    text-decoration: none;
+    color: #244f68;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+nav a:hover {
+    color: #347b9d;
+}
+
+
+/* =========================================================
+   ENROLL NOW BUTTON
+========================================================= */
+
+.enquire-btn {
+    background: linear-gradient(
+        90deg,
+        #244f68,
+        #62a2bf
+    );
+
+    color: white !important;
+
+    padding: 11px 19px;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 5px 15px rgba(36, 79, 104, 0.18);
+}
+
+.enquire-btn:hover {
+    background: linear-gradient(
+        90deg,
+        #183b52,
+        #347b9d
+    );
+}
+
+
+/* =========================================================
+   MOBILE MENU ICON
+========================================================= */
+
+.menu-icon {
+    display: none;
+
+    font-size: 28px;
+    cursor: pointer;
+
+    color: #244f68;
+
+    margin-left: auto;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    min-height: 100vh;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    background-image:
+        url("https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=2000&q=85");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        90deg,
+        rgba(24, 59, 82, 0.95),
+        rgba(38, 91, 116, 0.76),
+        rgba(98, 162, 191, 0.30)
+    );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 800px;
+
+    margin-left: 9%;
+
+    padding-top: 90px;
+
+    color: white;
+}
+
+.location-title {
+    font-size: 30px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    color: #ffffff;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 62px;
+    line-height: 1.08;
+
+    margin-bottom: 24px;
+}
+
+.hero h1 span {
+    display: block;
+    color: #78b8d2;
+}
+
+.hero-content > p {
+    max-width: 570px;
+
+    font-size: 18px;
+    line-height: 1.7;
+
+    color: #e8f4f7;
+
+    margin-bottom: 32px;
+}
+
+
+/* =========================================================
+   HERO BUTTONS
+========================================================= */
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.primary-btn,
+.outline-btn {
+    display: inline-block;
+
+    padding: 14px 25px;
+
+    border-radius: 25px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.primary-btn {
+    background: #244f68;
+    color: white;
+}
+
+.primary-btn:hover {
+    background: white;
+    color: #244f68;
+}
+
+.outline-btn {
+    color: white;
+
+    border: 1px solid rgba(255, 255, 255, 0.7);
+
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.outline-btn:hover {
+    background: white;
+    color: #244f68;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.section-heading span,
+.section-label {
+    color: #347b9d;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.section-heading h2 {
+    font-size: 40px;
+    color: #244f68;
+
+    margin-top: 10px;
+}
+
+.section-heading h2 b {
+    color: #347b9d;
+}
+
+.section-heading p {
+    color: #78909c;
+    margin-top: 12px;
+}
+
+
+/* =========================================================
+   HOME COURSES
+========================================================= */
+
+.courses-section {
+    padding: 100px 8%;
+
+    background: linear-gradient(
+        135deg,
+        #f4f9fb,
+        #eef7fa
+    );
+}
+
+.course-category-grid {
+    max-width: 900px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 30px;
+}
+
+
+/* =========================================================
+   CATEGORY CARD
+========================================================= */
+
+.category-card {
+    min-height: 290px;
+
+    position: relative;
+
+    padding: 38px;
+
+    text-decoration: none;
+
+    background: white;
+
+    border-radius: 20px;
+
+    border: 1px solid #e4edf1;
+
+    box-shadow:
+        0 15px 40px rgba(36, 79, 104, 0.08);
+
+    overflow: hidden;
+
+    transition: 0.35s;
+
+    color: #244f68;
+}
+
+
+/* BLUE TOP BAR FOR ALL */
+
+.category-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 6px;
+
+    background: linear-gradient(
+        90deg,
+        #244f68,
+        #62a2bf
+    );
+}
+
+
+/* NON CODING ALSO BLUE */
+
+.noncoding::before {
+    background: linear-gradient(
+        90deg,
+        #244f68,
+        #62a2bf
+    );
+}
+
+.category-card:hover {
+    transform: translateY(-10px);
+
+    box-shadow:
+        0 25px 50px rgba(36, 79, 104, 0.14);
+}
+
+
+/* =========================================================
+   CATEGORY ICON
+========================================================= */
+
+.category-icon {
+    width: 70px;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background: #eaf4f8;
+
+    color: #244f68;
+
+    font-size: 30px;
+    font-weight: bold;
+
+    margin-bottom: 25px;
+}
+
+.noncoding .category-icon {
+    background: #eaf4f8;
+    color: #244f68;
+}
+
+
+/* =========================================================
+   CATEGORY TITLE
+========================================================= */
+
+.category-card h3 {
+    font-size: 30px;
+
+    color: #244f68;
+
+    margin-bottom: 15px;
+}
+
+.category-card p {
+    color: #78909c;
+
+    line-height: 1.7;
+
+    font-size: 15px;
+
+    max-width: 430px;
+}
+
+
+/* =========================================================
+   EXPLORE LINK - BLUE
+========================================================= */
+
+.learn-more {
+    position: absolute;
+
+    bottom: 30px;
+
+    color: #244f68;
+
+    font-weight: bold;
+
+    font-size: 14px;
+}
+
+.noncoding .learn-more {
+    color: #244f68;
+}
+
+
+/* =========================================================
+   WHY US
+========================================================= */
+
+.why-section {
+    padding: 100px 8%;
+    background: white;
+}
+
+.why-grid {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 22px;
+}
+
+.why-card {
+    padding: 35px 25px;
+
+    text-align: center;
+
+    background: #f7fbfd;
+
+    border-radius: 18px;
+
+    border: 1px solid #e3edf2;
+
+    transition: 0.3s;
+}
+
+.why-card:hover {
+    transform: translateY(-7px);
+
+    background: #eef7fa;
+}
+
+.why-icon {
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+.why-card h3 {
+    color: #244f68;
+    margin-bottom: 12px;
+}
+
+.why-card p {
+    color: #78909c;
+
+    line-height: 1.6;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-section {
+    padding: 100px 8%;
+
+    background: linear-gradient(
+        135deg,
+        #eef7fa,
+        #f5fafc
+    );
+}
+
+.about-container {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 80px;
+
+    align-items: center;
+}
+
+.about-text h2 {
+    font-size: 48px;
+
+    color: #244f68;
+
+    line-height: 1.15;
+
+    margin: 15px 0 25px;
+}
+
+.about-text h2 span {
+    display: block;
+    color: #347b9d;
+}
+
+.about-text p {
+    color: #607d8b;
+
+    line-height: 1.8;
+
+    margin-bottom: 18px;
+}
+
+.about-text .primary-btn {
+    margin-top: 15px;
+}
+
+.about-visual {
+    display: flex;
+    justify-content: center;
+}
+
+.about-box {
+    width: 380px;
+    height: 330px;
+
+    border-radius: 30px;
+
+    background: linear-gradient(
+        145deg,
+        #244f68,
+        #347b9d
+    );
+
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    box-shadow:
+        25px 25px 0 #8fc3d6;
+}
+
+.big-number {
+    font-size: 42px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.about-box p {
+    margin-top: 12px;
+    color: #e8f5f8;
+}
+
+.about-box span {
+    margin-top: 25px;
+
+    color: #a9d4e3;
+
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   ENQUIRY
+========================================================= */
+
+.enquiry-section {
+    padding: 100px 8%;
+
+    background: linear-gradient(
+        120deg,
+        #214b64,
+        #356f8d
+    );
+}
+
+.enquiry-container {
+    max-width: 1050px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+.enquiry-content {
+    color: white;
+}
+
+.enquiry-content > span {
+    color: #a9d4e3;
+
+    letter-spacing: 2px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+.enquiry-content h2 {
+    font-size: 48px;
+
+    line-height: 1.15;
+
+    margin: 15px 0 20px;
+}
+
+.enquiry-content h2 strong {
+    display: block;
+    color: #8fc3d6;
+}
+
+.enquiry-content p {
+    color: #d9ebf1;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   REGISTRATION FORM
+========================================================= */
+
+#enquiryForm {
+    width: 100%;
+
+    padding: 30px;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    border-radius: 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.15);
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   FORM INPUTS
+========================================================= */
+
+#enquiryForm input,
+#enquiryForm select,
+#enquiryForm textarea {
+    width: 100%;
+
+    min-width: 0;
+
+    box-sizing: border-box;
+
+    border: 1px solid #dce8ed;
+
+    background: #f8fbfc;
+
+    padding: 14px 15px;
+
+    border-radius: 9px;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    color: #244f68;
+
+    outline: none;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+
+/* =========================================================
+   PLACEHOLDER
+========================================================= */
+
+#enquiryForm input::placeholder,
+#enquiryForm textarea::placeholder {
+    color: #78909c;
+    opacity: 1;
+}
+
+
+/* =========================================================
+   FORM FOCUS - BLUE
+========================================================= */
+
+#enquiryForm input:focus,
+#enquiryForm select:focus,
+#enquiryForm textarea:focus {
+    border-color: #347b9d;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 0 3px rgba(52, 123, 157, 0.10);
+}
+
+
+/* =========================================================
+   DATE INPUT
+========================================================= */
+
+#enquiryForm input[type="date"] {
+    color: #4b5b65;
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   SELECT
+========================================================= */
+
+#enquiryForm select {
+    cursor: pointer;
+    appearance: auto;
+}
+
+
+/* =========================================================
+   TEXTAREA
+========================================================= */
+
+#enquiryForm textarea {
+    min-height: 90px;
+
+    resize: vertical;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   STUDENT DETAILS
+========================================================= */
+
+#studentDetails {
+    width: 100% !important;
+
+    box-sizing: border-box;
+
+    flex-direction: column !important;
+
+    gap: 14px;
+
+    margin: 0;
+    padding: 0;
+}
+
+#studentDetails input {
+    width: 100% !important;
+
+    box-sizing: border-box;
+
+    display: block;
+}
+
+
+/* =========================================================
+   WORKING PROFESSIONAL DETAILS
+========================================================= */
+
+#workingDetails {
+    width: 100% !important;
+
+    box-sizing: border-box;
+
+    flex-direction: column !important;
+
+    gap: 14px;
+
+    margin: 0;
+    padding: 0;
+}
+
+#workingDetails input {
+    width: 100% !important;
+
+    box-sizing: border-box;
+
+    display: block;
+}
+
+
+/* =========================================================
+   SUCCESS MESSAGE
+========================================================= */
+
+#registrationSuccess {
+    width: 100% !important;
+
+    box-sizing: border-box;
+
+    padding: 14px 16px;
+
+    margin: 0;
+
+    border-radius: 10px;
+
+    background: #eaf8ee;
+
+    border: 1px solid #b9e5c8;
+
+    color: #218838;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    line-height: 1.5;
+
+    text-align: center;
+
+    animation:
+        registrationSuccessShow 0.3s ease;
+}
+
+@keyframes registrationSuccessShow {
+
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   SUBMIT / ENROLL BUTTON - BLUE
+========================================================= */
+
+#enquiryForm button {
+    width: 100%;
+
+    min-height: 55px;
+
+    box-sizing: border-box;
+
+    border: none;
+
+    padding: 14px 20px;
+
+    border-radius: 30px;
+
+    background: linear-gradient(
+        90deg,
+        #244f68,
+        #62a2bf
+    );
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        transform 0.2s ease,
+        box-shadow 0.25s ease;
+}
+
+#enquiryForm button:hover {
+    background: linear-gradient(
+        90deg,
+        #183b52,
+        #347b9d
+    );
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 18px rgba(36, 79, 104, 0.22);
+}
+
+#enquiryForm button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+#enquiryForm button:disabled {
+    opacity: 0.85;
+
+    cursor: default;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-section {
+    padding: 100px 8%;
+    background: white;
+}
+
+.contact-grid {
+    max-width: 950px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+.contact-card {
+    text-align: center;
+
+    padding: 35px 20px;
+
+    border-radius: 18px;
+
+    background: #f7fbfd;
+
+    border: 1px solid #e5eef3;
+
+    transition: 0.3s;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 12px 30px rgba(36, 79, 104, 0.08);
+}
+
+.contact-icon {
+    font-size: 34px;
+    margin-bottom: 15px;
+}
+
+.contact-card h3 {
+    color: #244f68;
+    margin-bottom: 10px;
+}
+
+.contact-card p {
+    color: #78909c;
+}
+
+
+/* =========================================================
+   CONTACT LINKS
+========================================================= */
+
+.contact-card a {
+    color: #244f68;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.contact-card a:hover {
+    color: #62a2bf;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    padding: 45px 20px;
+
+    text-align: center;
+
+    background: #183b52;
+
+    color: white;
+}
+
+footer img {
+    width: 125px;
+
+    background: white;
+
+    padding: 6px;
+
+    border-radius: 6px;
+
+    margin-bottom: 12px;
+}
+
+footer p {
+    color: #c8dce5;
+
+    margin-bottom: 20px;
+}
+
+.footer-links {
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    color: white;
+
+    text-decoration: none;
+
+    margin: 0 10px;
+
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    color: #8fc3d6;
+}
+
+footer small {
+    color: #9eb8c5;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1150px) {
+
+    .nav-digital-board {
+        width: 230px;
+    }
+
+    nav {
+        gap: 17px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+}
+
+
+@media (max-width: 950px) {
+
+    .nav-digital-board {
+        width: 200px;
+    }
+
+    nav {
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE NAVBAR
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .nav-container {
+        min-height: 72px;
+    }
+
+    nav {
+        display: none;
+
+        position: absolute;
+
+        top: 72px;
+
+        left: 0;
+
+        width: 100%;
+
+        padding: 25px;
+
+        background: linear-gradient(
+            90deg,
+            #f5fafc,
+            #eef7fa
+        );
+
+        flex-direction: column;
+
+        gap: 20px;
+
+        box-shadow:
+            0 10px 25px rgba(36, 79, 104, 0.12);
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .course-category-grid,
+    .why-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .about-container,
+    .enquiry-container {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .nav-container {
+        height: 70px;
+        min-height: 70px;
+
+        padding: 0 18px;
+    }
+
+    .logo img {
+        width: 120px;
+    }
+
+    nav {
+        top: 70px;
+    }
+
+
+    /* =====================================================
+       MOBILE HERO
+    ===================================================== */
+
+    .hero {
+        min-height: 100vh;
+
+        position: relative;
+
+        overflow: hidden;
+
+        background-image:
+
+            linear-gradient(
+                135deg,
+                rgba(11, 35, 52, 0.92),
+                rgba(24, 79, 102, 0.78),
+                rgba(98, 162, 191, 0.45)
+            ),
+
+            url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=90");
+
+        background-size: cover;
+
+        background-position: center;
+    }
+
+
+    /* =====================================================
+       MOBILE GLOW
+    ===================================================== */
+
+    .hero::before {
+        content: "";
+
+        position: absolute;
+
+        width: 280px;
+        height: 280px;
+
+        top: -80px;
+        right: -100px;
+
+        background:
+            rgba(98, 162, 191, 0.22);
+
+        border-radius: 50%;
+
+        filter: blur(10px);
+    }
+
+    .hero::after {
+        content: "";
+
+        position: absolute;
+
+        width: 220px;
+        height: 220px;
+
+        bottom: -80px;
+        left: -100px;
+
+        background:
+            rgba(98, 162, 191, 0.25);
+
+        border-radius: 50%;
+
+        filter: blur(10px);
+    }
+
+
+    /* =====================================================
+       MOBILE DIGITAL BOARD
+    ===================================================== */
+
+    .nav-digital-board {
+        display: flex;
+
+        position: absolute;
+
+        top: 14px;
+
+        left: 145px;
+
+        right: 55px;
+
+        width: auto;
+
+        height: 32px;
+
+        z-index: 10;
+
+        border-radius: 7px;
+
+        background: linear-gradient(
+            90deg,
+            rgba(240, 248, 251, 0.96),
+            rgba(218, 238, 245, 0.96),
+            rgba(240, 248, 251, 0.96)
+        );
+
+        border: 1px solid #9bc8d9;
+
+        box-shadow:
+            0 0 15px rgba(98, 162, 191, 0.35),
+            inset 0 0 10px rgba(36, 79, 104, 0.12);
+
+        overflow: hidden;
+    }
+
+    .nav-digital-text {
+        font-size: 9px;
+
+        letter-spacing: 0.5px;
+
+        color: #244f68;
+
+        animation:
+            navDigitalMove 10s linear infinite;
+    }
+
+
+    /* =====================================================
+       MOBILE HERO CONTENT
+    ===================================================== */
+
+    .hero-content {
+        margin-left: 0;
+
+        padding: 165px 22px 60px;
+
+        max-width: 100%;
+
+        z-index: 3;
+
+        text-align: center;
+    }
+
+    .location-title {
+        font-size: 20px;
+
+        margin-bottom: 16px;
+
+        letter-spacing: 2px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+
+        line-height: 1.12;
+
+        margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+        color: #8fc3d6;
+
+        text-shadow:
+            0 0 15px rgba(143, 195, 214, 0.35);
+    }
+
+    .hero-content > p {
+        max-width: 100%;
+
+        font-size: 15px;
+
+        line-height: 1.7;
+
+        color: #eef8fa;
+
+        margin-bottom: 28px;
+    }
+
+
+    /* =====================================================
+       MOBILE BUTTONS
+    ===================================================== */
+
+    .hero-buttons {
+        flex-direction: column;
+
+        gap: 12px;
+
+        width: 100%;
+    }
+
+    .primary-btn,
+    .outline-btn {
+        width: 100%;
+
+        text-align: center;
+
+        padding: 14px 20px;
+    }
+
+    .primary-btn {
+        box-shadow:
+            0 8px 25px rgba(36, 79, 104, 0.35);
+    }
+
+
+    /* =====================================================
+       OTHER MOBILE SECTIONS
+    ===================================================== */
+
+    .courses-section,
+    .why-section,
+    .about-section,
+    .enquiry-section,
+    .contact-section {
+        padding: 75px 20px;
+    }
+
+    .section-heading h2 {
+        font-size: 32px;
+    }
+
+    .course-category-grid,
+    .why-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-text h2,
+    .enquiry-content h2 {
+        font-size: 38px;
+    }
+
+    .about-box {
+        width: 100%;
+        height: 280px;
+    }
+
+    .big-number {
+        font-size: 32px;
+    }
+
+    .enquiry-container {
+        gap: 40px;
+    }
+
+
+    /* =====================================================
+       MOBILE REGISTRATION FORM
+    ===================================================== */
+
+    #enquiryForm {
+        width: 100%;
+
+        padding: 20px;
+
+        gap: 12px;
+
+        border-radius: 16px;
+
+        box-sizing: border-box;
+    }
+
+    #enquiryForm input,
+    #enquiryForm select,
+    #enquiryForm textarea {
+        width: 100%;
+
+        padding: 13px 14px;
+
+        font-size: 14px;
+
+        border-radius: 9px;
+    }
+
+    #studentDetails,
+    #workingDetails {
+        width: 100% !important;
+
+        flex-direction: column !important;
+
+        gap: 12px;
+    }
+
+    #studentDetails input,
+    #workingDetails input {
+        width: 100% !important;
+    }
+
+    #registrationSuccess {
+        width: 100% !important;
+
+        padding: 12px 13px;
+
+        font-size: 13px;
+    }
+
+    #enquiryForm button {
+        width: 100%;
+
+        min-height: 52px;
+
+        font-size: 15px;
+    }
+
+}
+
+
+/* =========================================================
+   CODING / NON-CODING HERO
+========================================================= */
+
+.coding-hero {
+    min-height: 55vh;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background-image:
+        url("https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=2000&q=85");
+
+    background-size: cover;
+
+    background-position: center;
+}
+
+.coding-hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(24, 59, 82, 0.94),
+            rgba(38, 91, 116, 0.82),
+            rgba(98, 162, 191, 0.35)
+        );
+}
+
+.coding-hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+
+    color: white;
+
+    padding: 130px 20px 60px;
+}
+
+.coding-label {
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+    font-weight: bold;
+
+    color: #9bc8d9;
+}
+
+.coding-hero h1 {
+    font-size: 58px;
+
+    margin: 18px 0;
+
+    line-height: 1.1;
+}
+
+.coding-hero h1 span {
+    color: #8fc3d6;
+}
+
+.coding-hero-content p {
+    max-width: 650px;
+
+    margin: auto;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    color: #e8f4f7;
+}
+
+
+/* =========================================================
+   COURSE SECTION
+========================================================= */
+
+.coding-section {
+    padding: 100px 8%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f4f9fb,
+            #eef7fa
+        );
+}
+
+.coding-grid {
+    max-width: 1050px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 30px;
+}
+
+
+/* =========================================================
+   COURSE CARD
+========================================================= */
+
+.coding-card {
+    min-height: 310px;
+
+    position: relative;
+
+    padding: 38px;
+
+    text-decoration: none;
+
+    background: white;
+
+    border-radius: 22px;
+
+    border: 1px solid #e3edf2;
+
+    box-shadow:
+        0 15px 40px rgba(36, 79, 104, 0.08);
+
+    overflow: hidden;
+
+    transition: 0.35s;
+
+    color: #244f68 !important;
+}
+
+
+/* =========================================================
+   BLUE TOP LINE
+   ALL COURSES SAME COLOUR
+========================================================= */
+
+.coding-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 6px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #244f68,
+            #62a2bf
+        );
+}
+
+
+/* =========================================================
+   COURSE CARD HOVER
+========================================================= */
+
+.coding-card:hover {
+    transform: translateY(-10px);
+
+    box-shadow:
+        0 25px 55px rgba(36, 79, 104, 0.15);
+
+    color: #244f68 !important;
+}
+
+
+/* =========================================================
+   VISITED LINK FIX
+========================================================= */
+
+.coding-card:link,
+.coding-card:visited,
+.coding-card:hover,
+.coding-card:active,
+.coding-card:focus,
+.coding-card:focus-visible {
+    color: #244f68 !important;
+
+    text-decoration: none !important;
+
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   COURSE ICON
+   ALL SAME BLUE
+========================================================= */
+
+.coding-icon {
+    width: 72px;
+    height: 72px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background: #eaf4f8;
+
+    color: #244f68 !important;
+
+    font-size: 30px;
+
+    font-weight: bold;
+
+    margin-bottom: 24px;
+}
+
+
+/* NEW GEN */
+
+.coding-icon.newgen {
+    background: #eaf4f8;
+    color: #244f68 !important;
+}
+
+
+/* COURSE ON */
+
+.coding-icon.courseon {
+    background: #eaf4f8;
+    color: #244f68 !important;
+}
+
+
+/* DIPLOMA */
+
+.coding-icon.diploma {
+    background: #eaf4f8;
+    color: #244f68 !important;
+}
+
+
+/* MASTER */
+
+.coding-icon.master {
+    background: #eaf4f8;
+    color: #244f68 !important;
+}
+
+
+/* OLD CLASS NAMES ALSO BLUE */
+
+.coding-icon.cpp,
+.coding-icon.python,
+.coding-icon.java {
+    background: #eaf4f8;
+
+    color: #244f68 !important;
+}
+
+
+/* =========================================================
+   COURSE TITLE
+========================================================= */
+
+.coding-card h3 {
+    font-size: 28px;
+
+    color: #244f68 !important;
+
+    margin-bottom: 14px;
+}
+
+
+/* =========================================================
+   COURSE DESCRIPTION
+========================================================= */
+
+.coding-card p {
+    color: #78909c !important;
+
+    line-height: 1.7;
+
+    font-size: 15px;
+
+    max-width: 500px;
+}
+
+
+/* =========================================================
+   COURSE LINK - BLUE
+========================================================= */
+
+.course-link {
+    position: absolute;
+
+    bottom: 28px;
+
+    left: 38px;
+
+    color: #244f68 !important;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+.coding-card:visited .course-link,
+.coding-card:active .course-link,
+.coding-card:focus .course-link,
+.coding-card:hover .course-link {
+    color: #244f68 !important;
+}
+
+.coding-card:visited h3,
+.coding-card:active h3,
+.coding-card:focus h3,
+.coding-card:hover h3 {
+    color: #244f68 !important;
+}
+
+.coding-card:visited p,
+.coding-card:active p,
+.coding-card:focus p,
+.coding-card:hover p {
+    color: #78909c !important;
+}
+
+
+/* =========================================================
+   ALL COURSE TYPES BLUE
+========================================================= */
+
+.software-development::before,
+.full-stack::before,
+.data-science::before,
+.artificial-intelligence::before,
+.office-automation::before,
+.data-analytics::before,
+.business-intelligence::before {
+    background:
+        linear-gradient(
+            90deg,
+            #244f68,
+            #62a2bf
+        );
+}
+
+.software-development .coding-icon,
+.full-stack .coding-icon,
+.data-science .coding-icon,
+.artificial-intelligence .coding-icon,
+.office-automation .coding-icon,
+.data-analytics .coding-icon,
+.business-intelligence .coding-icon {
+    background: #eaf4f8;
+
+    color: #244f68 !important;
+}
+
+
+/* =========================================================
+   COURSE BUTTONS
+========================================================= */
+
+.course-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 11px 20px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #244f68,
+            #62a2bf
+        );
+
+    color: white !important;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    border: none;
+
+    transition: 0.3s;
+}
+
+.course-btn:hover {
+    background:
+        linear-gradient(
+            90deg,
+            #183b52,
+            #347b9d
+        );
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 18px rgba(36, 79, 104, 0.20);
+}
+
+
+/* =========================================================
+   NEW GEN / COURSE ON / DIPLOMA / MASTER
+   SAME BLUE
+========================================================= */
+
+.new-gen,
+.course-on,
+.diploma,
+.master,
+.newgen,
+.courseon {
+    color: #244f68 !important;
+}
+
+.new-gen::before,
+.course-on::before,
+.diploma::before,
+.master::before,
+.newgen::before,
+.courseon::before {
+    background:
+        linear-gradient(
+            90deg,
+            #244f68,
+            #62a2bf
+        );
+}
+
+
+/* =========================================================
+   CODING PAGE MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .coding-hero {
+        min-height: 65vh;
+
+        background-image:
+
+            linear-gradient(
+                135deg,
+                rgba(11, 35, 52, 0.92),
+                rgba(24, 79, 102, 0.78),
+                rgba(98, 162, 191, 0.40)
+            ),
+
+            url("https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=90");
+
+        background-position: center;
+    }
+
+    .coding-hero-content {
+        padding: 165px 22px 55px;
+    }
+
+    .coding-hero h1 {
+        font-size: 42px;
+    }
+
+    .coding-hero-content p {
+        font-size: 15px;
+    }
+
+    .coding-section {
+        padding: 70px 20px;
+    }
+
+    .coding-grid {
+        grid-template-columns: 1fr;
+
+        gap: 22px;
+    }
+
+    .coding-card {
+        min-height: 300px;
+
+        padding: 30px;
+
+        color: #244f68 !important;
+    }
+
+    .coding-card:link,
+    .coding-card:visited,
+    .coding-card:hover,
+    .coding-card:active,
+    .coding-card:focus,
+    .coding-card:focus-visible {
+
+        color: #244f68 !important;
+
+        background: #ffffff;
+
+        text-decoration: none !important;
+    }
+
+    .coding-card h3 {
+        font-size: 25px;
+
+        color: #244f68 !important;
+    }
+
+    .coding-card p {
+        color: #78909c !important;
+    }
+
+    .course-link {
+        left: 30px;
+
+        bottom: 25px;
+
+        color: #244f68 !important;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE REGISTRATION FIX
+========================================================= */
+
+@media (max-width: 480px) {
+
+    #enquiryForm {
+        padding: 16px;
+
+        gap: 11px;
+    }
+
+    #enquiryForm input,
+    #enquiryForm select,
+    #enquiryForm textarea {
+
+        padding: 12px 13px;
+
+        font-size: 14px;
+    }
+
+    #studentDetails,
+    #workingDetails {
+        gap: 11px;
+    }
+
+    #enquiryForm textarea {
+        min-height: 80px;
+    }
+
+    #enquiryForm button {
+        min-height: 50px;
+
+        font-size: 15px;
+    }
+
+}
+
+
+/* =========================================================
+   EXTRA BLUE COURSE CARD SUPPORT
+   SOFTWARE DEVELOPMENT
+========================================================= */
+
+.software-development-card,
+.software-development {
+    position: relative;
+    overflow: hidden;
+}
+
+.software-development-card::before,
+.software-development::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 6px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #244f68,
+            #62a2bf
+        );
+}
+
+
+/* =========================================================
+   FULL STACK
+========================================================= */
+
+.full-stack-card,
+.full-stack {
+    position: relative;
+    overflow: hidden;
+}
+
+.full-stack-card::before,
+.full-stack::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 6px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #244f68,
+            #62a2bf
+        );
+}
+
+
+/* =========================================================
+   DATA SCIENCE
+========================================================= */
+
+.data-science-card,
+.data-science {
+    position: relative;
+    overflow: hidden;
+}
+
+.data-science-card::before,
+.data-science::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 6px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #244f68,
+            #62a2bf
+        );
+}
+
+
+/* =========================================================
+   ARTIFICIAL INTELLIGENCE
+========================================================= */
+
+.artificial-intelligence-card,
+.artificial-intelligence {
+    position: relative;
+    overflow: hidden;
+}
+
+.artificial-intelligence-card::before,
+.artificial-intelligence::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 6px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #244f68,
+            #62a2bf
+        );
+}
+
+
+/* =========================================================
+   OFFICE AUTOMATION
+========================================================= */
+
+.office-automation-card,
+.office-automation {
+    position: relative;
+    overflow: hidden;
+}
+
+.office-automation-card::before,
+.office-automation::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 6px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #244f68,
+            #62a2bf
+        );
+}
+
+
+/* =========================================================
+   DATA ANALYTICS
+========================================================= */
+
+.data-analytics-card,
+.data-analytics {
+    position: relative;
+    overflow: hidden;
+}
+
+.data-analytics-card::before,
+.data-analytics::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 6px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #244f68,
+            #62a2bf
+        );
+}
+
+
+/* =========================================================
+   BUSINESS INTELLIGENCE
+========================================================= */
+
+.business-intelligence-card,
+.business-intelligence {
+    position: relative;
+    overflow: hidden;
+}
+
+.business-intelligence-card::before,
+.business-intelligence::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 6px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #244f68,
+            #62a2bf
+        );
+}
+
+
+/* =========================================================
+   UNIVERSAL BLUE ICON
+========================================================= */
+
+.software-development-card .coding-icon,
+.full-stack-card .coding-icon,
+.data-science-card .coding-icon,
+.artificial-intelligence-card .coding-icon,
+.office-automation-card .coding-icon,
+.data-analytics-card .coding-icon,
+.business-intelligence-card .coding-icon {
+
+    background: #eaf4f8;
+
+    color: #244f68 !important;
+}
+
+
+/* =========================================================
+   UNIVERSAL BLUE COURSE LINK
+========================================================= */
+
+.software-development-card .course-link,
+.full-stack-card .course-link,
+.data-science-card .course-link,
+.artificial-intelligence-card .course-link,
+.office-automation-card .course-link,
+.data-analytics-card .course-link,
+.business-intelligence-card .course-link {
+
+    color: #244f68 !important;
+}
+
+
+/* =========================================================
+   ENROLL NOW - UNIVERSAL
+========================================================= */
+
+.enroll-now,
+.enroll-btn,
+.enroll-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            90deg,
+            #244f68,
+            #62a2bf
+        );
+
+    color: white !important;
+
+    border: none;
+
+    padding: 12px 24px;
+
+    border-radius: 25px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    box-shadow:
+        0 5px 15px rgba(36, 79, 104, 0.18);
+}
+
+.enroll-now:hover,
+.enroll-btn:hover,
+.enroll-button:hover {
+
+    background:
+        linear-gradient(
+            90deg,
+            #183b52,
+            #347b9d
+        );
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(36, 79, 104, 0.22);
+}
+
+
+/* =========================================================
+   FINAL BLUE OVERRIDE
+   Ensures NO RED COURSE BAR
+========================================================= */
+
+.coding-card::before,
+.category-card::before,
+.software-development::before,
+.full-stack::before,
+.data-science::before,
+.artificial-intelligence::before,
+.office-automation::before,
+.data-analytics::before,
+.business-intelligence::before,
+.new-gen::before,
+.course-on::before,
+.diploma::before,
+.master::before,
+.newgen::before,
+.courseon::before {
+
+    background:
+        linear-gradient(
+            90deg,
+            #244f68,
+            #62a2bf
+        ) !important;
+}
+
+
+/* =========================================================
+   FINAL BLUE ICON OVERRIDE
+========================================================= */
+
+.coding-icon,
+.category-icon {
+
+    background: #eaf4f8 !important;
+
+    color: #244f68 !important;
+}
+
+
+/* =========================================================
+   FINAL BLUE LINK OVERRIDE
+========================================================= */
+
+.course-link,
+.learn-more {
+
+    color: #244f68 !important;
+}
+
+
+/* =========================================================
+   FINAL BLUE BUTTON OVERRIDE
+========================================================= */
+
+.primary-btn,
+.enquire-btn {
+
+    background:
+        linear-gradient(
+            90deg,
+            #244f68,
+            #62a2bf
+        );
+}
+
+.primary-btn:hover,
+.enquire-btn:hover {
+
+    background:
+        linear-gradient(
+            90deg,
+            #183b52,
+            #347b9d
+        );
+}
+
+
+/* =========================================================
+   END
+========================================================= */
